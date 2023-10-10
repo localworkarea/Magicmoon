@@ -5,8 +5,12 @@
 	<title>MAGICMOON</title>
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
-	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="css/style.min.css?_v=20231009201530">
+	<style>
+		body {
+			opacity: 0;
+		}
+	</style>
+	<link rel="stylesheet" href="css/style.min.css?_v=20231010213237">
 	<link rel="shortcut icon" href="favicon.ico">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
@@ -33,40 +37,101 @@
 				</div>
 			</div>
 		</header>
+		<div class="bg-main">
+			<img class="bg-main__image " src="img/bg/bg-pc.svg" alt="background">
+			<div class="bg-main__bg bg-0"></div>
+			<div class="bg-main__bg bg-1"></div>
+			<div class="bg-main__bg bg-2"></div>
+			<div class="bg-main__bg bg-3"></div>
+			<div class="bg-main__bg bg-4"></div>
+		</div>
+		<div class="hero__menu menu-hero">
+			<nav class="menu-hero__nav">
+				<ul class="menu-hero__list">
+					<li class="menu-hero__item">
+						<a href="#" class="menu-hero__link menu-hero-type">ВИДИ ЧАЮ</a>
+					</li>
+					<li class="menu-hero__item">
+						<a href="#" class="menu-hero__link menu-hero-about">ПРО НАС</a>
+					</li>
+					<li class="menu-hero__item">
+						<a href="#" class="menu-hero__link menu-hero-conts">КОНТАКТИ</a>
+					</li>
+				</ul>
+			</nav>
+		</div>
+
 		<main data-fp data-fp-effect="slider" class="main">
 			<section data-fp-section class="section hero _hide-header">
-				<div class="hero__bg bg-main">
-					<img class="bg-main__image " src="img/bg/bg-pc.svg" alt="background">
+				<div class="hero__title title-hero">
+					<div class="title-hero__body">
+						<div data-da=".title-hero__sub,480,0" class="title-hero__left">
+							<img class="title-hero__img-l" src="img/icons/title-01.svg" alt="text magic">
+						</div>
+						<div class="title-hero__center">
+							<img class="title-hero__img-c" src="img/icons/moon-main.svg" alt="logo">
+							<div class="title-hero__stars stars">
+								<div class="stars__img star-width-1"><img data-prlx-mouse data-prlx-dxr data-prlx-cx="10" src="img/icons/star.svg" alt="star"></div>
+								<div class="stars__img star-width-1"><img data-prlx-mouse data-prlx-dxy data-prlx-cy="10" src="img/icons/star.svg" alt="star"></div>
+								<div class="stars__img star-width-1"><img data-prlx-mouse data-prlx-dxr data-prlx-cx="10" src="img/icons/star.svg" alt="star"></div>
+								<div class="stars__img star-width-1"><img data-prlx-mouse data-prlx-dxy data-prlx-cy="10" src="img/icons/star.svg" alt="star"></div>
+								<div class="stars__img star-width-1"><img data-prlx-mouse data-prlx-dxr data-prlx-cx="10" src="img/icons/star.svg" alt="star"></div>
+								<div class="stars__img star-width-1"><img data-prlx-mouse data-prlx-dxy data-prlx-cy="10" src="img/icons/star.svg" alt="star"></div>
+								<div class="stars__img star-width-1"><img data-prlx-mouse data-prlx-dxr data-prlx-cx="10" src="img/icons/star.svg" alt="star"></div>
+								<div class="stars__img star-width-1"><img data-prlx-mouse data-prlx-dxy data-prlx-cy="10" src="img/icons/star.svg" alt="star"></div>
+								<div class="stars__img star-width-2"><img data-prlx-mouse data-prlx-dxy data-prlx-cx="10" src="img/icons/star.svg" alt="star"></div>
+								<div class="stars__img star-width-2"><img data-prlx-mouse data-prlx-dxr data-prlx-cy="10" src="img/icons/star.svg" alt="star"></div>
+								<div class="stars__img star-width-2"><img data-prlx-mouse data-prlx-dxy data-prlx-cx="10" src="img/icons/star.svg" alt="star"></div>
+								<div class="stars__img star-width-2"><img data-prlx-mouse data-prlx-dxr data-prlx-cy="10" src="img/icons/star.svg" alt="star"></div>
+								<div class="stars__img star-width-3"><img data-prlx-mouse data-prlx-dxy data-prlx-cy src="img/icons/star.svg" alt="star"></div>
+								<div class="stars__img star-width-3"><img data-prlx-mouse data-prlx-dxy data-prlx-cy="20" src="img/icons/star.svg" alt="star"></div>
+								<div class="stars__img star-width-4"><img data-prlx-mouse data-prlx-dxy data-prlx-cy src="img/icons/star.svg" alt="star"></div>
+								<div class="stars__img star-width-5"><img data-prlx-mouse data-prlx-dxy data-prlx-cy src="img/icons/star.svg" alt="star"></div>
+								<div class="stars__img star-width-5"><img data-prlx-mouse data-prlx-dxy data-prlx-cy src="img/icons/star.svg" alt="star"></div>
+							</div>
+						</div>
+						<div data-da=".title-hero__sub,480,1" class="title-hero__right">
+							<img class="title-hero__img-r" src="img/icons/title-02.svg" alt="text moon">
+						</div>
+					</div>
+					<div class="title-hero__sub">
+						<p class="title-hero__subtitle">Магічний світ чаю...</p>
+					</div>
 				</div>
-				FIRST
+
+				<div class="hero__cup">
+					<picture><source srcset="img/cup.webp" type="image/webp"><img src="img/cup.png" alt="cup of tea"></picture>
+				</div>
+
+				<div class="hero__bg bg-hero">
+					<div class="bg-hero__left">
+						<picture><source srcset="img/bg/man.webp" type="image/webp"><img class="bg-hero__man" src="img/bg/man.png" alt="man"></picture>
+						<img class="bg-hero__man-mask" src="img/bg/man-mask-blck-0.svg" alt="mask">
+						<picture><source srcset="img/bg/leaves.webp" type="image/webp"><img class="bg-hero__leaves" src="img/bg/leaves.png" alt="leaves"></picture>
+					</div>
+					<div class="bg-hero__right">
+						<img src="img/bg/building.svg" alt="building" class="bg-hero__build">
+						<img src="img/bg/building-mask-blck.svg" alt="building" class="bg-hero__build-mask">
+					</div>
+				</div>
+
 			</section>
 			<section data-fp-section class="section first">
-				<div class="first__bg bg-main">
-					<img class="bg-main__image " src="img/bg/bg-pc.svg" alt="background">
-				</div>
-				SECOND
+
 			</section>
 			<section data-fp-section class="section second">
-				<div class="second__bg bg-main">
-					<img class="bg-main__image " src="img/bg/bg-pc.svg" alt="background">
-				</div>
-				THIRD
+
 			</section>
 			<section data-fp-section class="section third">
-				<div class="third__bg bg-main">
-					<img class="bg-main__image " src="img/bg/bg-pc.svg" alt="background">
-				</div>
-				FOURTH
+
 			</section>
 			<section data-fp-section class="section fourth">
-				<div class="fourth__bg bg-main">
-					<img class="bg-main__image " src="img/bg/bg-pc.svg" alt="background">
-				</div>
-				FIFTH
+
 			</section>
 		</main>
+
 	</div>
-	<script src="js/app.min.js?_v=20231009201530"></script>
+	<script src="js/app.min.js?_v=20231010213237"></script>
 </body>
 
 </html>

@@ -414,6 +414,10 @@ export class FullPage {
 		const secType = document.querySelector('.sec-type');
 		const secConts = document.querySelector('.sec-conts');
 		const menuLogo = document.querySelector('.menu__logo');
+		const menuHeroType = document.querySelector('.menu-hero-type');
+		const menuHeroAbout = document.querySelector('.menu-hero-about');
+		const menuHeroConts = document.querySelector('.menu-hero-conts');
+
 
 		if (menuLogo) {
 			menuLogo.addEventListener("click", () => {
@@ -448,6 +452,21 @@ export class FullPage {
 		if (secType) {
 			secType.addEventListener("click", () => {
 				this.switchingSection(1);
+			});
+		}
+		if (menuHeroType) {
+			menuHeroType.addEventListener("click", () => {
+				this.switchingSection(1);
+			});
+		}
+		if (menuHeroAbout) {
+			menuHeroAbout.addEventListener("click", () => {
+				this.switchingSection(4);
+			});
+		}
+		if (menuHeroConts) {
+			menuHeroConts.addEventListener("click", () => {
+				this.switchingSection(4);
 			});
 		}
 
