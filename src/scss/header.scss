@@ -6,13 +6,17 @@
 	pointer-events: none;
 	width: 100%;
 	z-index: 100;
-	@media (max-width: em(1300.98)){
-		top: toRem(20);
-		opacity: 0;
-		.loaded & {
+	opacity: 0;
+	.loaded & {
+		opacity: 1;
+		transition: opacity 0s linear .5s;
+		@media (max-width: em(1300.98)){
 			opacity: 1;
 			transition: opacity .7s ease 2.6s;
 		}
+	}
+	@media (max-width: em(1300.98)){
+		top: toRem(20);
 	}
 	
 	// .header__body

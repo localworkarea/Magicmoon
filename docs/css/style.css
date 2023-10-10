@@ -481,6 +481,13 @@ body {
   pointer-events: none;
   width: 100%;
   z-index: 100;
+  opacity: 0;
+}
+
+.loaded .header {
+  opacity: 1;
+  -webkit-transition: opacity 0s linear 0.5s;
+  transition: opacity 0s linear 0.5s;
 }
 
 .header__body {
@@ -980,8 +987,8 @@ body {
   bottom: 0;
   left: -100%;
   opacity: 0;
-  -webkit-transition: all 0.8s ease;
-  transition: all 0.8s ease;
+  -webkit-transition: all 1s ease;
+  transition: all 1s ease;
 }
 
 .loaded .bg-hero__left {
@@ -1016,8 +1023,8 @@ body {
   bottom: 0;
   right: -100%;
   opacity: 0;
-  -webkit-transition: all 0.8s ease;
-  transition: all 0.8s ease;
+  -webkit-transition: all 1s ease;
+  transition: all 1s ease;
 }
 
 .loaded .bg-hero__right {
@@ -1292,15 +1299,14 @@ body {
     display: none;
   }
 
-  .header {
-    top: 1.25rem;
-    opacity: 0;
-  }
-
   .loaded .header {
     opacity: 1;
     -webkit-transition: opacity 0.7s ease 2.6s;
     transition: opacity 0.7s ease 2.6s;
+  }
+
+  .header {
+    top: 1.25rem;
   }
 
   .header__body::before {
