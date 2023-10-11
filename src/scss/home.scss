@@ -15,7 +15,7 @@
       @include adaptiveValue("max-width", 1000, 700,0,1920,1440);
       margin: 0 auto;
       width: 100%;
-      overflow: hidden;
+      position: relative;
 
       @media (max-width: em(992.98)) and (min-height:em(750.98)){
           position: absolute;
@@ -32,6 +32,9 @@
         left: 50%;
         transform: translate(-50%,-30%);
       }
+      @media (max-width:$mobileSmall){
+         overflow: hidden; 
+      }
       @media (max-width: em(900.98)) and (max-height: em(500.98)){
         position: relative;
         top: unset;
@@ -40,32 +43,53 @@
         overflow: unset;
         margin-bottom: 30px;
       }
-      img {
-        width: 100%;
-        height: auto;
+    }
+		// .hero__cup-img
+		&__cup-img {
+      width: 100%;
+      height: auto;
 
-        opacity: 0;
-        transition: all 1.5s ease;
+      opacity: 0;
+      transition: all 1.5s ease;
+      @media (min-width:$tablet){
+        transform: translateY(100%);
+      }
+      @media (max-width:$mobileSmall){
+        width: 140%; 
+        left: 50%;
+        position: relative;
+        transform: translateX(-50%);
+      }
+      .loaded & {
+        opacity: 1;
+        transition-delay: 0.5s;
         @media (min-width:$tablet){
-          transform: translateY(100%);
-        }
-        .loaded & {
-          opacity: 1;
-          transition-delay: 0.5s;
-          @media (min-width:$tablet){
-            transform: translateY(0);
-          }
-        }
-        @media (max-width:$mobileSmall){
-          width: 140%; 
-          left: 50%;
-          position: relative;
-          transform: translateX(-50%);
+          transform: translateY(0);
         }
       }
-    }
+		}
     // .hero__bg
     &__bg {
+    }
+     // .hero__circle-link
+    &__circle-link {
+      position: absolute;
+      top: 0;
+      right: 0;
+      opacity: 0;
+      transition: all .6s ease;
+      .loaded & {
+        opacity: 1;
+        transition-delay: 2.5s;
+      }
+      @media (max-width:$tablet){
+        right: 10%;
+      }
+      @media (max-width:$mobileSmall){
+         top: unset;
+         left: 20%;
+         bottom: 0%; 
+      }
     }
 }
 
@@ -376,9 +400,9 @@
     @include adaptiveValue("width", 550, 400,0,1920,1440);
     @include adaptiveValue("width", 400, 300,3,1440,992);
     
-    left: -100%;
+    left: -50%;
     opacity: 0;
-    transition: all 1s ease;
+    transition: all 1.2s ease;
     @media (max-width:$tablet){
        left: 0; 
     }
@@ -436,9 +460,9 @@
     @include adaptiveValue("width", 400, 300,0,1920,1440);
     @include adaptiveValue("width", 300, 200,3,1440,768);
 
-    right: -100%;
+    right: -50%;
     opacity: 0;
-    transition: all 1s ease;
+    transition: all 1.2s ease;
     .loaded & {
       right: 0;
       opacity: 1;
