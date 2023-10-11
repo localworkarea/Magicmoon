@@ -122,6 +122,11 @@
 			padding: toRem(50) toRem(24) toRem(24);
 			height: 411px;
 		}
+		@media (max-width: em(900.98)) and (max-height: em(500.98)){
+			padding: toRem(40) toRem(24) toRem(16);
+			height: 300px;
+			overflow-y: auto;
+		}
 	}
 	@media (max-width:$mobileSmall){
 		top: 27px;

@@ -57,7 +57,7 @@
           }
         }
         @media (max-width:$mobileSmall){
-          width: 150%; 
+          width: 140%; 
           left: 50%;
           position: relative;
           transform: translateX(-50%);
@@ -149,11 +149,14 @@
   // .title-hero__img-c
   &__img-c {
     @include adaptiveValue("width", 264, 198,0,1920,1440);
-    @include adaptiveValue("width", 198,100,3,1440,768 );
+    @include adaptiveValue("width", 198,120,3,1440,768);
     height: auto;
 
     opacity: 0;
     transition: all 1s ease;
+    @media (max-width:$mobileXS){
+       width: toRem(100) !important; 
+    }
     .loaded & {
       opacity: 1;
       transform: translateY(0);
@@ -335,13 +338,17 @@
     position: relative;
     top: toRem(-40);
 
-    width: 0;
-    overflow: hidden;
+    @media (min-width:$mobileSmall){
+      width: 0;
+      overflow: hidden;
+    }
     opacity: 0;
     .loaded & {
-      width: 100%;
       opacity: 1;
       transition: all 2.5s ease 1.25s;
+      @media (min-width:$mobileSmall){
+        width: 100%;
+      }
     }
     @media (max-width: em(1440.98)){
         top: toRem(-20);
@@ -417,8 +424,7 @@
       display: block;
       width: 100%;
       height: auto;
-      left: 0;
-      top: 0;
+      transform: translateY(35%);
     }
 	}
 

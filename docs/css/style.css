@@ -281,6 +281,11 @@ body {
   opacity: 1;
 }
 
+.bg-main__bg.bg-0 .bg-main__image {
+  -webkit-filter: invert(21%) sepia(23%) saturate(3494%) hue-rotate(229deg) brightness(89%) contrast(98%);
+          filter: invert(21%) sepia(23%) saturate(3494%) hue-rotate(229deg) brightness(89%) contrast(98%);
+}
+
 .bg-main__bg.bg-1 {
   background: -webkit-gradient(linear, left top, left bottom, from(#170E34), to(#2D046F));
   background: linear-gradient(180deg, #170E34 0%, #2D046F 100%);
@@ -292,6 +297,11 @@ body {
   opacity: 1;
 }
 
+.bg-main__bg.bg-1 .bg-main__image {
+  -webkit-filter: invert(21%) sepia(23%) saturate(3494%) hue-rotate(229deg) brightness(89%) contrast(98%);
+          filter: invert(21%) sepia(23%) saturate(3494%) hue-rotate(229deg) brightness(89%) contrast(98%);
+}
+
 .bg-main__bg.bg-2 {
   background: linear-gradient(177deg, #005761 9.21%, #00343A 100.76%);
   z-index: 3;
@@ -300,6 +310,11 @@ body {
 
 .fp-section-2 .bg-main__bg.bg-2 {
   opacity: 1;
+}
+
+.bg-main__bg.bg-2 .bg-main__image {
+  -webkit-filter: invert(16%) sepia(93%) saturate(2332%) hue-rotate(169deg) brightness(101%) contrast(99%);
+          filter: invert(16%) sepia(93%) saturate(2332%) hue-rotate(169deg) brightness(101%) contrast(99%);
 }
 
 .bg-main__bg.bg-3 {
@@ -313,6 +328,11 @@ body {
   opacity: 1;
 }
 
+.bg-main__bg.bg-3 .bg-main__image {
+  -webkit-filter: invert(72%) sepia(11%) saturate(1700%) hue-rotate(11deg) brightness(89%) contrast(78%);
+          filter: invert(72%) sepia(11%) saturate(1700%) hue-rotate(11deg) brightness(89%) contrast(78%);
+}
+
 .bg-main__bg.bg-4 {
   background: -webkit-gradient(linear, left top, left bottom, color-stop(14.97%, #422E81), to(#160D33)), -webkit-gradient(linear, left top, left bottom, from(#400B2E), to(#910A4D));
   background: linear-gradient(180deg, #422E81 14.97%, #160D33 100%), linear-gradient(180deg, #400B2E 0%, #910A4D 100%);
@@ -324,40 +344,17 @@ body {
   opacity: 1;
 }
 
+.bg-main__bg.bg-4 .bg-main__image {
+  -webkit-filter: invert(21%) sepia(23%) saturate(3494%) hue-rotate(229deg) brightness(89%) contrast(98%);
+          filter: invert(21%) sepia(23%) saturate(3494%) hue-rotate(229deg) brightness(89%) contrast(98%);
+}
+
 .bg-main__image {
   width: 100%;
   height: 100%;
   position: absolute;
-  z-index: 10;
   -o-object-fit: contain;
      object-fit: contain;
-  -webkit-transition: all 0s ease 0.15s;
-  transition: all 0s ease 0.15s;
-}
-
-.fp-section-0 .bg-main__image {
-  -webkit-filter: invert(21%) sepia(23%) saturate(3494%) hue-rotate(229deg) brightness(89%) contrast(98%);
-          filter: invert(21%) sepia(23%) saturate(3494%) hue-rotate(229deg) brightness(89%) contrast(98%);
-}
-
-.fp-section-1 .bg-main__image {
-  -webkit-filter: invert(21%) sepia(23%) saturate(3494%) hue-rotate(229deg) brightness(89%) contrast(98%);
-          filter: invert(21%) sepia(23%) saturate(3494%) hue-rotate(229deg) brightness(89%) contrast(98%);
-}
-
-.fp-section-2 .bg-main__image {
-  -webkit-filter: invert(16%) sepia(93%) saturate(2332%) hue-rotate(169deg) brightness(101%) contrast(99%);
-          filter: invert(16%) sepia(93%) saturate(2332%) hue-rotate(169deg) brightness(101%) contrast(99%);
-}
-
-.fp-section-3 .bg-main__image {
-  -webkit-filter: invert(72%) sepia(11%) saturate(1700%) hue-rotate(11deg) brightness(89%) contrast(78%);
-          filter: invert(72%) sepia(11%) saturate(1700%) hue-rotate(11deg) brightness(89%) contrast(78%);
-}
-
-.fp-section-4 .bg-main__image {
-  -webkit-filter: invert(21%) sepia(23%) saturate(3494%) hue-rotate(229deg) brightness(89%) contrast(98%);
-          filter: invert(21%) sepia(23%) saturate(3494%) hue-rotate(229deg) brightness(89%) contrast(98%);
 }
 
 .menu-hero {
@@ -954,13 +951,10 @@ body {
   text-wrap: nowrap;
   position: relative;
   top: -2.5rem;
-  width: 0;
-  overflow: hidden;
   opacity: 0;
 }
 
 .loaded .title-hero__subtitle {
-  width: 100%;
   opacity: 1;
   -webkit-transition: all 2.5s ease 1.25s;
   transition: all 2.5s ease 1.25s;
@@ -1048,6 +1042,17 @@ body {
   z-index: 0;
   left: 0;
   top: 0;
+}
+
+@media (min-width: 30.06125em) {
+  .title-hero__subtitle {
+    width: 0;
+    overflow: hidden;
+  }
+
+  .loaded .title-hero__subtitle {
+    width: 100%;
+  }
 }
 
 @media (min-width: 48.06125em) {
@@ -1258,7 +1263,7 @@ body {
   }
 
   .title-hero__img-c {
-    width: 6.25rem;
+    width: 7.5rem;
   }
 
   .bg-hero__right {
@@ -1518,8 +1523,9 @@ body {
     display: block;
     width: 100%;
     height: auto;
-    left: 0;
-    top: 0;
+    -webkit-transform: translateY(35%);
+        -ms-transform: translateY(35%);
+            transform: translateY(35%);
   }
 
   .bg-hero__right {
@@ -1528,6 +1534,12 @@ body {
 }
 
 @media (max-width: 56.31125em) and (max-height: 31.31125em) {
+  .menu-open .nav {
+    padding: 2.5rem 1.5rem 1rem;
+    height: 300px;
+    overflow-y: auto;
+  }
+
   .hero__cup {
     position: relative;
     top: unset;
@@ -1602,7 +1614,7 @@ body {
   }
 
   .hero__cup img {
-    width: 150%;
+    width: 140%;
     left: 50%;
     position: relative;
     -webkit-transform: translateX(-50%);
@@ -1656,6 +1668,10 @@ body {
 
   .title-hero__right {
     max-width: 8.75rem;
+  }
+
+  .title-hero__img-c {
+    width: 6.25rem !important;
   }
 }
 
@@ -1968,15 +1984,15 @@ body {
     }
 }
 
-@supports (width: clamp( 6.25rem , -0.75rem  +  14.5833333333vw , 12.375rem )) {
+@supports (width: clamp( 7.5rem , 1.9285714286rem  +  11.6071428571vw , 12.375rem )) {
     .title-hero__img-c {
-      width: clamp( 6.25rem , -0.75rem  +  14.5833333333vw , 12.375rem );
+      width: clamp( 7.5rem , 1.9285714286rem  +  11.6071428571vw , 12.375rem );
     }
 }
 
-@supports not (width: clamp( 6.25rem , -0.75rem  +  14.5833333333vw , 12.375rem )) {
+@supports not (width: clamp( 7.5rem , 1.9285714286rem  +  11.6071428571vw , 12.375rem )) {
     .title-hero__img-c {
-      width: calc(6.25rem + 6.125 * (100vw - 48rem) / 42);
+      width: calc(7.5rem + 4.875 * (100vw - 48rem) / 42);
     }
 }
 
