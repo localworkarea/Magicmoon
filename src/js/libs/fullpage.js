@@ -217,15 +217,15 @@ export class FullPage {
 				this.wrapper.classList.remove('slider-mode');
 				break;
 
-			case 'cards':
-				this.wrapper.classList.remove('cards-mode');
-				this.setZIndex();
-				break;
+			// case 'cards':
+			// 	this.wrapper.classList.remove('cards-mode');
+			// 	this.setZIndex();
+			// 	break;
 
-			case 'fade':
-				this.wrapper.classList.remove('fade-mode');
-				this.setZIndex();
-				break;
+			// case 'fade':
+			// 	this.wrapper.classList.remove('fade-mode');
+			// 	this.setZIndex();
+			// 	break;
 
 			default:
 				break;
@@ -239,15 +239,15 @@ export class FullPage {
 				this.wrapper.classList.add('slider-mode');
 				break;
 
-			case 'cards':
-				this.wrapper.classList.add('cards-mode');
-				this.setZIndex();
-				break;
+			// case 'cards':
+			// 	this.wrapper.classList.add('cards-mode');
+			// 	this.setZIndex();
+			// 	break;
 
-			case 'fade':
-				this.wrapper.classList.add('fade-mode');
-				this.setZIndex();
-				break;
+			// case 'fade':
+			// 	this.wrapper.classList.add('fade-mode');
+			// 	this.setZIndex();
+			// 	break;
 
 			default:
 				break;
@@ -263,13 +263,14 @@ export class FullPage {
 				this.styleSlider();
 				break;
 
-			case 'cards':
-				this.styleCards();
-				break;
+			// case 'cards':
+			// 	this.styleCards();
+			// 	break;
 
-			case 'fade':
-				this.styleFade();
-				break;
+			// case 'fade':
+			// 	this.styleFade();
+			// 	break;
+
 			default:
 				break;
 		}
@@ -297,32 +298,32 @@ export class FullPage {
 			}
 		}
 	}
-	// cards mode
-	styleCards() {
-		for (let index = 0; index < this.sections.length; index++) {
-			const section = this.sections[index];
-			if (index >= this.activeSectionId) {
-				section.style.transform = 'translate3D(0,0,0)';
-			} else if (index < this.activeSectionId) {
-				section.style.transform = 'translate3D(0,-100%,0)';
-			}
-		}
-	}
-	// fade style 
-	styleFade() {
-		for (let index = 0; index < this.sections.length; index++) {
-			const section = this.sections[index];
-			if (index === this.activeSectionId) {
-				section.style.opacity = '1';
-				section.style.pointerEvents = 'all';
-				//section.style.visibility = 'visible';
-			} else {
-				section.style.opacity = '0';
-				section.style.pointerEvents = 'none';
-				//section.style.visibility = 'hidden';
-			}
-		}
-	}
+	// // cards mode
+	// styleCards() {
+	// 	for (let index = 0; index < this.sections.length; index++) {
+	// 		const section = this.sections[index];
+	// 		if (index >= this.activeSectionId) {
+	// 			section.style.transform = 'translate3D(0,0,0)';
+	// 		} else if (index < this.activeSectionId) {
+	// 			section.style.transform = 'translate3D(0,-100%,0)';
+	// 		}
+	// 	}
+	// }
+	// // fade style 
+	// styleFade() {
+	// 	for (let index = 0; index < this.sections.length; index++) {
+	// 		const section = this.sections[index];
+	// 		if (index === this.activeSectionId) {
+	// 			section.style.opacity = '1';
+	// 			section.style.pointerEvents = 'all';
+	// 			//section.style.visibility = 'visible';
+	// 		} else {
+	// 			section.style.opacity = '0';
+	// 			section.style.pointerEvents = 'none';
+	// 			//section.style.visibility = 'hidden';
+	// 		}
+	// 	}
+	// }
 	//===============================
 	// Видалення стилів
 	removeStyle() {
@@ -387,7 +388,7 @@ export class FullPage {
 			transitionEnd: this.transitionend.bind(this),
 
 			// Клік для буллетів
-			click: this.clickBullets.bind(this),
+			// click: this.clickBullets.bind(this),
 		}
 		if (isMobile.iOS()) {
 			document.addEventListener('touchmove', (e) => {
@@ -482,34 +483,34 @@ export class FullPage {
 		}
 	}
 	//===============================
-	// Функція кліка по булетах
-	clickBullets(e) {
-		// Натиснутий буллет
-		const bullet = e.target.closest(`.${this.options.bulletClass}`);
-		if (bullet) {
-			// Масив усіх буллетів
-			const arrayChildren = Array.from(this.bulletsWrapper.children);
+	// // Функція кліка по булетах
+	// clickBullets(e) {
+	// 	// Натиснутий буллет
+	// 	const bullet = e.target.closest(`.${this.options.bulletClass}`);
+	// 	if (bullet) {
+	// 		// Масив усіх буллетів
+	// 		const arrayChildren = Array.from(this.bulletsWrapper.children);
 
-			// id Натиснутого буллета
-			const idClickBullet = arrayChildren.indexOf(bullet)
+	// 		// id Натиснутого буллета
+	// 		const idClickBullet = arrayChildren.indexOf(bullet)
 
-			// Перемикання секції
-			this.switchingSection(idClickBullet)
-		}
-	}
-	//===============================
-	// Установка стилів для буллетів
-	setActiveBullet(idButton) {
-		if (!this.bulletsWrapper) return
-		// Усі буллети
-		const bullets = this.bulletsWrapper.children;
+	// 		// Перемикання секції
+	// 		this.switchingSection(idClickBullet)
+	// 	}
+	// }
+	// //===============================
+	// // Установка стилів для буллетів
+	// setActiveBullet(idButton) {
+	// 	if (!this.bulletsWrapper) return
+	// 	// Усі буллети
+	// 	const bullets = this.bulletsWrapper.children;
 
-		for (let index = 0; index < bullets.length; index++) {
-			const bullet = bullets[index];
-			if (idButton === index) bullet.classList.add(this.options.bulletActiveClass);
-			else bullet.classList.remove(this.options.bulletActiveClass);
-		}
-	}
+	// 	for (let index = 0; index < bullets.length; index++) {
+	// 		const bullet = bullets[index];
+	// 		if (idButton === index) bullet.classList.add(this.options.bulletActiveClass);
+	// 		else bullet.classList.remove(this.options.bulletActiveClass);
+	// 	}
+	// }
 	//===============================
 	// Функція натискання тач/пера/курсора
 	touchDown(e) {
@@ -683,27 +684,27 @@ export class FullPage {
 	}
 	//===============================
 	// Встановлення булетів
-	setBullets() {
-		// Пошук оболонки буллетів
-		this.bulletsWrapper = document.querySelector(`.${this.options.bulletsClass}`);
+	// setBullets() {
+	// 	// Пошук оболонки буллетів
+	// 	this.bulletsWrapper = document.querySelector(`.${this.options.bulletsClass}`);
 
-		// Якщо немає створюємо
-		if (!this.bulletsWrapper) {
-			const bullets = document.createElement('div');
-			bullets.classList.add(this.options.bulletsClass);
-			this.wrapper.append(bullets);
-			this.bulletsWrapper = bullets;
-		}
+	// 	// Якщо немає створюємо
+	// 	if (!this.bulletsWrapper) {
+	// 		const bullets = document.createElement('div');
+	// 		bullets.classList.add(this.options.bulletsClass);
+	// 		this.wrapper.append(bullets);
+	// 		this.bulletsWrapper = bullets;
+	// 	}
 
-		// Створення буллетів
-		if (this.bulletsWrapper) {
-			for (let index = 0; index < this.sections.length; index++) {
-				const span = document.createElement('span');
-				span.classList.add(this.options.bulletClass);
-				this.bulletsWrapper.append(span);
-			}
-		}
-	}
+	// 	// Створення буллетів
+	// 	if (this.bulletsWrapper) {
+	// 		for (let index = 0; index < this.sections.length; index++) {
+	// 			const span = document.createElement('span');
+	// 			span.classList.add(this.options.bulletClass);
+	// 			this.bulletsWrapper.append(span);
+	// 		}
+	// 	}
+	// }
 	//===============================
 	// Z-INDEX
 	setZIndex() {

@@ -102,7 +102,7 @@ class Popup {
 		this.options.init ? this.initPopups() : null
 	}
 	initPopups() {
-		this.popupLogging(`Прокинувся`);
+	
 		this.eventsPopup();
 	}
 	eventsPopup() {
@@ -125,7 +125,7 @@ class Popup {
 					this.open();
 					return;
 
-				} else this.popupLogging(`Йой, не заповнено атрибут у ${buttonOpen.classList}`);
+				}
 
 				return;
 			}
@@ -169,6 +169,15 @@ class Popup {
 		}
 	}
 	open(selectorValue) {
+
+		// ПРИ ОТКРЫТИИ ДОБАВЛЯЕМ КЛАСС ПО ID НАЖАТОЙ КНОПКИ ЧТОБЫ УПРАВЛЯТЬ КЛАССАМИ НА СТРАНИЦЕ
+		if (this.targetOpen.element) {
+      // Добавляем класс к <html> на основе id попапа
+      const popupId = this.targetOpen.selector.replace('#', ''); // Убираем символ #
+      document.documentElement.classList.add(`popup-${popupId}`);
+    }
+		// ------------------------------------------------------------------------------------------
+
 		if (bodyLockStatus) {
 			// Якщо перед відкриттям попапа був режим lock
 			this.bodyLock = document.documentElement.classList.contains('lock') && !this.isOpen ? true : false;
@@ -189,22 +198,22 @@ class Popup {
 
 			if (this.targetOpen.element) {
 				// YouTube
-				if (this.youTubeCode) {
-					const codeVideo = this.youTubeCode;
-					const urlVideo = `https://www.youtube.com/embed/${codeVideo}?rel=0&showinfo=0&autoplay=1`
-					const iframe = document.createElement('iframe');
-					iframe.setAttribute('allowfullscreen', '');
+				// if (this.youTubeCode) {
+				// 	const codeVideo = this.youTubeCode;
+				// 	const urlVideo = `https://www.youtube.com/embed/${codeVideo}?rel=0&showinfo=0&autoplay=1`
+				// 	const iframe = document.createElement('iframe');
+				// 	iframe.setAttribute('allowfullscreen', '');
 
-					const autoplay = this.options.setAutoplayYoutube ? 'autoplay;' : '';
-					iframe.setAttribute('allow', `${autoplay}; encrypted-media`);
+				// 	const autoplay = this.options.setAutoplayYoutube ? 'autoplay;' : '';
+				// 	iframe.setAttribute('allow', `${autoplay}; encrypted-media`);
 
-					iframe.setAttribute('src', urlVideo);
+				// 	iframe.setAttribute('src', urlVideo);
 
-					if (!this.targetOpen.element.querySelector(`[${this.options.youtubePlaceAttribute}]`)) {
-						const youtubePlace = this.targetOpen.element.querySelector('.popup__text').setAttribute(`${this.options.youtubePlaceAttribute}`, '');
-					}
-					this.targetOpen.element.querySelector(`[${this.options.youtubePlaceAttribute}]`).appendChild(iframe);
-				}
+				// 	if (!this.targetOpen.element.querySelector(`[${this.options.youtubePlaceAttribute}]`)) {
+				// 		const youtubePlace = this.targetOpen.element.querySelector('.popup__text').setAttribute(`${this.options.youtubePlaceAttribute}`, '');
+				// 	}
+				// 	this.targetOpen.element.querySelector(`[${this.options.youtubePlaceAttribute}]`).appendChild(iframe);
+				// }
 				if (this.options.hashSettings.location) {
 					// Отримання хешу та його виставлення
 					this._getHash();
@@ -252,13 +261,23 @@ class Popup {
 				}));
 				this.popupLogging(`Відкрив попап`);
 
-			} else this.popupLogging(`Йой, такого попапу немає. Перевірте коректність введення. `);
+			} 
 		}
 	}
 	close(selectorValue) {
 		if (selectorValue && typeof (selectorValue) === "string" && selectorValue.trim() !== "") {
 			this.previousOpen.selector = selectorValue;
 		}
+
+		// ПРИ ЗАКРЫТИИ ЗАБИРАЕМ КЛАСС ПО ID НАЖАТОЙ КНОПКИ ЧТОБЫ УПРАВЛЯТЬ КЛАССАМИ НА СТРАНИЦЕ
+		if (this.previousOpen.element) {
+      // Удаляем класс из <html> на основе id предыдущего попапа
+      const popupId = this.previousOpen.selector.replace('#', '');
+      document.documentElement.classList.remove(`popup-${popupId}`);
+    }
+		// ------------------------------------------------------------------------------------------
+
+
 		if (!this.isOpen || !bodyLockStatus) {
 			return;
 		}
@@ -320,9 +339,9 @@ class Popup {
 
 		const buttons = document.querySelector(`[${this.options.attributeOpenButton} = "${classInHash}"]`) ? document.querySelector(`[${this.options.attributeOpenButton} = "${classInHash}"]`) : document.querySelector(`[${this.options.attributeOpenButton} = "${classInHash.replace('.', "#")}"]`);
 
-		this.youTubeCode = buttons.getAttribute(this.options.youtubeAttribute) ?
-			buttons.getAttribute(this.options.youtubeAttribute) :
-			null;
+		// this.youTubeCode = buttons.getAttribute(this.options.youtubeAttribute) ?
+		// 	buttons.getAttribute(this.options.youtubeAttribute) :
+		// 	null;
 
 		if (buttons && classInHash) this.open(classInHash);
 	}
