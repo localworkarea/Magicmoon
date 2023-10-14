@@ -1057,8 +1057,8 @@ body {
   -ms-grid-columns: auto 1fr;
   grid-template-columns: auto 1fr;
   opacity: 0;
-  -webkit-transition: all 0.6s ease 0.1s;
-  transition: all 0.6s ease 0.1s;
+  -webkit-transition: all 0.6s ease 0.3s;
+  transition: all 0.6s ease 0.3s;
 }
 
 .popup__images {
@@ -1192,6 +1192,7 @@ body {
   position: relative;
   z-index: 1;
   overflow: hidden;
+  overflow: clip;
   opacity: 0;
   -webkit-transform: translateY(100%);
       -ms-transform: translateY(100%);
@@ -1203,13 +1204,10 @@ body {
 .info-popup__link::before {
   content: "";
   position: absolute;
-  top: 50%;
-  left: 50%;
+  z-index: 0;
+  border-radius: 5.6875rem;
   width: 100%;
-  height: 13.4375rem;
-  -webkit-transform: translate(-50%, -50%) rotate(-45deg);
-      -ms-transform: translate(-50%, -50%) rotate(-45deg);
-          transform: translate(-50%, -50%) rotate(-45deg);
+  height: 100%;
 }
 
 .popup-1 .info-popup__link::before {
@@ -3109,11 +3107,32 @@ body {
     -webkit-transform: translateY(10%);
         -ms-transform: translateY(10%);
             transform: translateY(10%);
-    -webkit-transition-delay: 0.55s;
-            transition-delay: 0.55s;
+    -webkit-transition-delay: 0.35s;
+            transition-delay: 0.35s;
+  }
+
+  .popup-4 .popup__images-wr-v {
+    right: unset;
+    bottom: unset;
   }
 
   .popup__images-wr-v {
+    position: relative;
+    top: unset;
+    right: unset;
+    bottom: unset;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    max-width: 60%;
+    -webkit-transform: translateY(0);
+        -ms-transform: translateY(0);
+            transform: translateY(0);
+  }
+
+  .popup-1 .popup__images-wr-v,
+  .popup-2 .popup__images-wr-v,
+  .popup-3 .popup__images-wr-v {
     display: none;
   }
 
@@ -3129,6 +3148,10 @@ body {
     width: -moz-fit-content;
     width: fit-content;
     max-width: 80%;
+  }
+
+  .popup__img-vert {
+    width: 100% !important;
   }
 
   .popup__img-horz {
@@ -3220,10 +3243,6 @@ body {
 
   .popup__images-wr-h {
     max-width: 90%;
-  }
-
-  .info-popup__link::before {
-    height: 24.75rem;
   }
 
   .info-popup__link {

@@ -1067,7 +1067,7 @@
     grid-template-columns: auto 1fr;
 
     opacity: 0;
-    transition: all .6s ease 0.1s;
+    transition: all .6s ease 0.3s;
     
     @include adaptiveValue("margin-bottom", 16, 20);
     @media (max-width:$tablet){
@@ -1100,7 +1100,7 @@
        display: flex;
        justify-content: center;
        transform: translateY(10%);
-       transition-delay: 0.55s;
+       transition-delay: 0.35s;
     }
     img {
       position: relative;
@@ -1136,9 +1136,24 @@
     .popup-4 & {
       right: toRem(25);
       bottom: toRem(-20);
+      @media (max-width:$mobile){
+       right: unset;
+       bottom : unset;
+      }
     }
     @media (max-width:$mobile){
-       display: none; 
+        position: relative;
+       top: unset;
+       right: unset;
+       bottom : unset;
+       width: fit-content; 
+       max-width: 60%;
+       transform: translateY(0);
+      .popup-1 &,
+      .popup-2 &,
+      .popup-3 & {
+        display: none; 
+      }
     }
 	}
 	// .popup__images-wr-h
@@ -1178,6 +1193,9 @@
   &__img-vert {
     @include adaptiveValue("width", 247, 230,0,1440,992);
     height: auto;
+    @media (max-width:$mobile){
+      width: 100% !important; 
+   }
   }
   // .popup__img-horz
   &__img-horz {
@@ -1255,22 +1273,29 @@
     position: relative;
     z-index: 1;
     overflow: hidden;
+    overflow: clip;
 
     opacity: 0;
     transform: translateY(100%);
     transition: all .6s ease 0.8s;
 
+   
+
     &::before {
       content:'';
       position: absolute;
-      top: 50%;
-      left: 50%;
+      z-index: 0;
+      border-radius: toRem(91);
+      // top: 50%;
+      // left: 50%;
       width: 100%;
-      height: toRem(215);
-      transform: translate(-50%,-50%) rotate(-45deg);
-      @media (max-width:$mobileSmall){
-         height: toRem(396); 
-      }
+      height: 100%;
+      // height: toRem(215);
+      // transform: translate(-50%,-50%) rotate(-45deg);
+      // transform: rotate(-45deg);
+      // @media (max-width:$mobileSmall){
+      //    height: toRem(396); 
+      // }
       .popup-1 & {
         background-image: radial-gradient(358.33% 98.07% at 45.26% 20.91%, #2F4056 53.13%, #162635 100%), radial-gradient(247.32% 92.14% at 50% 50%, #6E2FC8 0%, #2D056E 100%);
       }
