@@ -120,7 +120,30 @@ const enableSwipers = function () {
 	}
 	if (document.querySelector('.slider-second')) {
 		initSlider('.slider-second', {
-		  // Конфигурация для второго свайпера
+			modules: [Navigation],
+			observer: true,
+			observeParents: true,
+			slidesPerView: 1,
+			spaceBetween: 0,
+			speed: 500,
+			navigation: {
+				prevEl: '.slider-second .swiper-button-prev',
+				nextEl: '.slider-second .swiper-button-next',
+			},
+		});
+	}
+	if (document.querySelector('.slider-third')) {
+		initSlider('.slider-third', {
+			modules: [Navigation],
+			observer: true,
+			observeParents: true,
+			slidesPerView: 1,
+			spaceBetween: 0,
+			speed: 500,
+			navigation: {
+				prevEl: '.slider-third .swiper-button-prev',
+				nextEl: '.slider-third .swiper-button-next',
+			},
 		});
 	}
 };

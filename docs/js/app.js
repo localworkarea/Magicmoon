@@ -3321,7 +3321,30 @@
                 nextEl: ".slider-first .swiper-button-next"
             }
         });
-        if (document.querySelector(".slider-second")) initSlider(".slider-second", {});
+        if (document.querySelector(".slider-second")) initSlider(".slider-second", {
+            modules: [ navigation_Navigation ],
+            observer: true,
+            observeParents: true,
+            slidesPerView: 1,
+            spaceBetween: 0,
+            speed: 500,
+            navigation: {
+                prevEl: ".slider-second .swiper-button-prev",
+                nextEl: ".slider-second .swiper-button-next"
+            }
+        });
+        if (document.querySelector(".slider-third")) initSlider(".slider-third", {
+            modules: [ navigation_Navigation ],
+            observer: true,
+            observeParents: true,
+            slidesPerView: 1,
+            spaceBetween: 0,
+            speed: 500,
+            navigation: {
+                prevEl: ".slider-third .swiper-button-prev",
+                nextEl: ".slider-third .swiper-button-next"
+            }
+        });
     };
     breakpoint.addListener(breakpointChecker);
     breakpointChecker();
@@ -3758,18 +3781,19 @@
     }
     const da = new DynamicAdapt("max");
     da.init();
-    const typePackBodies = document.querySelectorAll(".swiper__slide");
-    const typePackWrapper = document.querySelector(".swiper__wrapper");
-    function removeAllHover() {
-        typePackBodies.forEach((body => {
-            body.querySelector(".type-pack__item").classList.remove("_hover");
+    function removeAllHover(container) {
+        const items = container.querySelectorAll(".type-pack__item");
+        items.forEach((item => {
+            item.classList.remove("_hover");
         }));
     }
-    if (typePackBodies) {
-        typePackBodies.forEach(((body, index, array) => {
-            const item = body.querySelector(".type-pack__item");
-            const prevButton = body.querySelector(".btn-prev");
-            const nextButton = body.querySelector(".btn-next");
+    function setupBlock(container) {
+        const items = container.querySelectorAll(".type-pack__item");
+        const prevButtons = container.querySelectorAll(".btn-prev");
+        const nextButtons = container.querySelectorAll(".btn-next");
+        items.forEach(((item, index) => {
+            const prevButton = prevButtons[index];
+            const nextButton = nextButtons[index];
             item.addEventListener("mouseenter", (() => {
                 item.classList.add("_hover");
             }));
@@ -3777,28 +3801,24 @@
                 item.classList.remove("_hover");
             }));
             prevButton.addEventListener("click", (() => {
+                removeAllHover(container);
                 const prevItem = item.parentElement.previousElementSibling;
-                if (prevItem) {
-                    prevItem.querySelector(".type-pack__item").classList.add("_hover");
-                    item.classList.remove("_hover");
-                }
-                const nextItem = item.parentElement.nextElementSibling;
-                if (nextItem) nextItem.querySelector(".type-pack__item").classList.remove("_hover");
+                if (prevItem) prevItem.querySelector(".type-pack__item").classList.add("_hover");
             }));
             nextButton.addEventListener("click", (() => {
-                const prevItem = item.parentElement.previousElementSibling;
-                if (prevItem) prevItem.querySelector(".type-pack__item").classList.remove("_hover");
+                removeAllHover(container);
                 const nextItem = item.parentElement.nextElementSibling;
-                if (nextItem) {
-                    nextItem.querySelector(".type-pack__item").classList.add("_hover");
-                    item.classList.remove("_hover");
-                }
+                if (nextItem) nextItem.querySelector(".type-pack__item").classList.add("_hover");
             }));
         }));
-        document.addEventListener("click", (event => {
-            if (!typePackWrapper.contains(event.target)) removeAllHover();
-        }));
     }
+    const wrappers = document.querySelectorAll(".swiper__wrapper");
+    wrappers.forEach((wrapper => {
+        setupBlock(wrapper);
+        document.addEventListener("click", (event => {
+            if (![ ...wrappers, ...Array.from(wrappers[0].querySelectorAll("*")) ].some((el => el.contains(event.target)))) removeAllHover(wrapper);
+        }));
+    }));
     window["FLS"] = false;
     isWebp();
     addTouchClass();

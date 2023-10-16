@@ -136,6 +136,7 @@ class Popup {
 				this.close();
 				return;
 			}
+			
 		}.bind(this));
 		// Закриття ESC
 		document.addEventListener("keydown", function (e) {
