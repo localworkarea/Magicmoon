@@ -418,6 +418,8 @@ export class FullPage {
 		const menuHeroType = document.querySelector('.menu-hero-type');
 		const menuHeroAbout = document.querySelector('.menu-hero-about');
 		const menuHeroConts = document.querySelector('.menu-hero-conts');
+		const heroLinkBtn = document.querySelector('.hero-link-btn');
+
 
 
 		if (menuLogo) {
@@ -468,6 +470,11 @@ export class FullPage {
 		if (menuHeroConts) {
 			menuHeroConts.addEventListener("click", () => {
 				this.switchingSection(4);
+			});
+		}
+		if (heroLinkBtn) {
+			heroLinkBtn.addEventListener("click", () => {
+				this.switchingSection(1);
 			});
 		}
 
