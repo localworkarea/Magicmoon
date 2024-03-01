@@ -3823,6 +3823,18 @@
             if (![ ...wrappers, ...Array.from(wrappers[0].querySelectorAll("*")) ].some((el => el.contains(event.target)))) removeAllHover(wrapper);
         }));
     }));
+    document.addEventListener("DOMContentLoaded", (function() {
+        var winPopup = document.querySelector(".win-popup");
+        if (winPopup) {
+            setTimeout((function() {
+                winPopup.classList.add("opened");
+            }), 2500);
+            var closeButton = document.querySelector(".win-popup__close");
+            if (closeButton) closeButton.addEventListener("click", (function() {
+                winPopup.classList.remove("opened");
+            }));
+        }
+    }));
     window["FLS"] = false;
     isWebp();
     addTouchClass();
