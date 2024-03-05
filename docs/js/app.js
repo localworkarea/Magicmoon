@@ -2924,7 +2924,7 @@
         classes
     };
     const extendedDefaults = {};
-    class swiper_core_Swiper {
+    class Swiper {
         constructor() {
             let el;
             let params;
@@ -2940,7 +2940,7 @@
                     const newParams = utils_extend({}, params, {
                         el: containerEl
                     });
-                    swipers.push(new swiper_core_Swiper(newParams));
+                    swipers.push(new Swiper(newParams));
                 }));
                 return swipers;
             }
@@ -3312,25 +3312,25 @@
             return defaults;
         }
         static installModule(mod) {
-            if (!swiper_core_Swiper.prototype.__modules__) swiper_core_Swiper.prototype.__modules__ = [];
-            const modules = swiper_core_Swiper.prototype.__modules__;
+            if (!Swiper.prototype.__modules__) Swiper.prototype.__modules__ = [];
+            const modules = Swiper.prototype.__modules__;
             if (typeof mod === "function" && modules.indexOf(mod) < 0) modules.push(mod);
         }
         static use(module) {
             if (Array.isArray(module)) {
-                module.forEach((m => swiper_core_Swiper.installModule(m)));
-                return swiper_core_Swiper;
+                module.forEach((m => Swiper.installModule(m)));
+                return Swiper;
             }
-            swiper_core_Swiper.installModule(module);
-            return swiper_core_Swiper;
+            Swiper.installModule(module);
+            return Swiper;
         }
     }
     Object.keys(prototypes).forEach((prototypeGroup => {
         Object.keys(prototypes[prototypeGroup]).forEach((protoMethod => {
-            swiper_core_Swiper.prototype[protoMethod] = prototypes[prototypeGroup][protoMethod];
+            Swiper.prototype[protoMethod] = prototypes[prototypeGroup][protoMethod];
         }));
     }));
-    swiper_core_Swiper.use([ Resize, Observer ]);
+    Swiper.use([ Resize, Observer ]);
     function create_element_if_not_defined_createElementIfNotDefined(swiper, originalParams, params, checkProps) {
         if (swiper.params.createElements) Object.keys(checkProps).forEach((key => {
             if (!params[key] && params.auto === true) {
@@ -3346,7 +3346,7 @@
         }));
         return params;
     }
-    function navigation_Navigation(_ref) {
+    function Navigation(_ref) {
         let {swiper, extendParams, on, emit} = _ref;
         extendParams({
             navigation: {
@@ -3494,10 +3494,55 @@
             destroy
         });
     }
+    function initSliders() {
+        if (document.querySelector(".slider-first")) new Swiper(".slider-first", {
+            modules: [ Navigation ],
+            observer: true,
+            observeParents: true,
+            spaceBetween: 0,
+            loop: true,
+            speed: 500,
+            navigation: {
+                prevEl: ".slider-first .swiper-button-prev",
+                nextEl: ".slider-first .swiper-button-next"
+            },
+            breakpoints: {
+                320: {
+                    slidesPerView: 1
+                },
+                901: {
+                    slidesPerView: 3
+                }
+            }
+        });
+        if (document.querySelector(".slider-second")) new Swiper(".slider-second", {
+            modules: [ Navigation ],
+            observer: true,
+            observeParents: true,
+            spaceBetween: 0,
+            loop: true,
+            speed: 500,
+            navigation: {
+                prevEl: ".slider-second .swiper-button-prev",
+                nextEl: ".slider-second .swiper-button-next"
+            },
+            breakpoints: {
+                320: {
+                    slidesPerView: 1
+                },
+                901: {
+                    slidesPerView: 3
+                }
+            }
+        });
+    }
+    window.addEventListener("load", (function(e) {
+        initSliders();
+    }));
     const breakpoint = window.matchMedia("(min-width: 56.31125em)");
     let mySwipers = {};
     function initSlider(selector, options) {
-        if (!mySwipers[selector]) mySwipers[selector] = new swiper_core_Swiper(selector, options);
+        if (!mySwipers[selector]) mySwipers[selector] = new Swiper(selector, options);
     }
     const breakpointChecker = function() {
         if (breakpoint.matches === true) {
@@ -3509,36 +3554,13 @@
         } else if (breakpoint.matches === false) return enableSwipers();
     };
     const enableSwipers = function() {
-        if (document.querySelector(".slider-first")) initSlider(".slider-first", {
-            modules: [ navigation_Navigation ],
-            observer: true,
-            observeParents: true,
-            slidesPerView: 1,
-            spaceBetween: 0,
-            speed: 500,
-            navigation: {
-                prevEl: ".slider-first .swiper-button-prev",
-                nextEl: ".slider-first .swiper-button-next"
-            }
-        });
-        if (document.querySelector(".slider-second")) initSlider(".slider-second", {
-            modules: [ navigation_Navigation ],
-            observer: true,
-            observeParents: true,
-            slidesPerView: 1,
-            spaceBetween: 0,
-            speed: 500,
-            navigation: {
-                prevEl: ".slider-second .swiper-button-prev",
-                nextEl: ".slider-second .swiper-button-next"
-            }
-        });
         if (document.querySelector(".slider-third")) initSlider(".slider-third", {
-            modules: [ navigation_Navigation ],
+            modules: [ Navigation ],
             observer: true,
             observeParents: true,
             slidesPerView: 1,
             spaceBetween: 0,
+            loop: true,
             speed: 500,
             navigation: {
                 prevEl: ".slider-third .swiper-button-prev",
@@ -3996,32 +4018,36 @@
         const prevButtons = container.querySelectorAll(".btn-prev");
         const nextButtons = container.querySelectorAll(".btn-next");
         items.forEach(((item, index) => {
-            const prevButton = prevButtons[index];
-            const nextButton = nextButtons[index];
-            item.addEventListener("mouseenter", (() => {
-                item.classList.add("_hover");
-            }));
-            item.addEventListener("mouseleave", (() => {
-                item.classList.remove("_hover");
-            }));
-            prevButton.addEventListener("click", (() => {
-                removeAllHover(container);
-                const prevItem = item.parentElement.previousElementSibling;
-                if (prevItem) prevItem.querySelector(".type-pack__item").classList.add("_hover");
-            }));
-            nextButton.addEventListener("click", (() => {
-                removeAllHover(container);
-                const nextItem = item.parentElement.nextElementSibling;
-                if (nextItem) nextItem.querySelector(".type-pack__item").classList.add("_hover");
-            }));
+            if (!isMobile.any()) {
+                item.addEventListener("mouseenter", (() => {
+                    item.classList.add("_hover");
+                }));
+                item.addEventListener("mouseleave", (() => {
+                    item.classList.remove("_hover");
+                }));
+            }
+            if (isMobile.any()) {
+                if (item.classList.contains("item-third")) item.classList.add("_hover");
+                if (item.classList.contains("item-third")) items.forEach(((item, index) => {
+                    const prevButton = prevButtons[index];
+                    const nextButton = nextButtons[index];
+                    prevButton.addEventListener("click", (() => {
+                        removeAllHover(container);
+                        const prevItem = item.parentElement.previousElementSibling;
+                        if (prevItem) prevItem.querySelector(".type-pack__item").classList.add("_hover");
+                    }));
+                    nextButton.addEventListener("click", (() => {
+                        removeAllHover(container);
+                        const nextItem = item.parentElement.nextElementSibling;
+                        if (nextItem) nextItem.querySelector(".type-pack__item").classList.add("_hover");
+                    }));
+                }));
+            }
         }));
     }
     const wrappers = document.querySelectorAll(".swiper__wrapper");
     wrappers.forEach((wrapper => {
         setupBlock(wrapper);
-        document.addEventListener("click", (event => {
-            if (![ ...wrappers, ...Array.from(wrappers[0].querySelectorAll("*")) ].some((el => el.contains(event.target)))) removeAllHover(wrapper);
-        }));
     }));
     document.addEventListener("DOMContentLoaded", (function() {
         var winPopup = document.querySelector(".win-popup");

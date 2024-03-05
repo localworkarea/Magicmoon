@@ -503,11 +503,9 @@
   }
 	// .first__wrapper
 	&__wrapper {
-
 	}
 	// .first__title
 	&__title {
-
   }
 	// .first__title-wrap
 	&__title-wrap {
@@ -578,7 +576,8 @@
       }
     }
     .popup-popup3 &,
-    .popup-popup4 & {
+    .popup-popup4 &,
+    .popup-popup13 & {
       &.img-mask-1 {
         display: none;
       }
