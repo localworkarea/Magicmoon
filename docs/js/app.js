@@ -3535,41 +3535,30 @@
                 }
             }
         });
-    }
-    window.addEventListener("load", (function(e) {
-        initSliders();
-    }));
-    const breakpoint = window.matchMedia("(min-width: 56.31125em)");
-    let mySwipers = {};
-    function initSlider(selector, options) {
-        if (!mySwipers[selector]) mySwipers[selector] = new Swiper(selector, options);
-    }
-    const breakpointChecker = function() {
-        if (breakpoint.matches === true) {
-            for (const selector in mySwipers) if (mySwipers[selector] !== void 0) {
-                mySwipers[selector].destroy(true, true);
-                mySwipers[selector] = void 0;
-            }
-            return;
-        } else if (breakpoint.matches === false) return enableSwipers();
-    };
-    const enableSwipers = function() {
-        if (document.querySelector(".slider-third")) initSlider(".slider-third", {
+        if (document.querySelector(".slider-third")) new Swiper(".slider-third", {
             modules: [ Navigation ],
             observer: true,
             observeParents: true,
-            slidesPerView: 1,
             spaceBetween: 0,
             loop: true,
             speed: 500,
             navigation: {
                 prevEl: ".slider-third .swiper-button-prev",
                 nextEl: ".slider-third .swiper-button-next"
+            },
+            breakpoints: {
+                320: {
+                    slidesPerView: 1
+                },
+                901: {
+                    slidesPerView: 3
+                }
             }
         });
-    };
-    breakpoint.addListener(breakpointChecker);
-    breakpointChecker();
+    }
+    window.addEventListener("load", (function(e) {
+        initSliders();
+    }));
     class FullPage {
         constructor(element, options) {
             let config = {
@@ -4007,60 +3996,6 @@
     }
     const da = new DynamicAdapt("max");
     da.init();
-    function removeAllHover(container) {
-        const items = container.querySelectorAll(".type-pack__item");
-        items.forEach((item => {
-            item.classList.remove("_hover");
-        }));
-    }
-    function setupBlock(container) {
-        const items = container.querySelectorAll(".type-pack__item");
-        const prevButtons = container.querySelectorAll(".btn-prev");
-        const nextButtons = container.querySelectorAll(".btn-next");
-        items.forEach(((item, index) => {
-            if (!isMobile.any()) {
-                item.addEventListener("mouseenter", (() => {
-                    item.classList.add("_hover");
-                }));
-                item.addEventListener("mouseleave", (() => {
-                    item.classList.remove("_hover");
-                }));
-            }
-            if (isMobile.any()) {
-                if (item.classList.contains("item-third")) item.classList.add("_hover");
-                if (item.classList.contains("item-third")) items.forEach(((item, index) => {
-                    const prevButton = prevButtons[index];
-                    const nextButton = nextButtons[index];
-                    prevButton.addEventListener("click", (() => {
-                        removeAllHover(container);
-                        const prevItem = item.parentElement.previousElementSibling;
-                        if (prevItem) prevItem.querySelector(".type-pack__item").classList.add("_hover");
-                    }));
-                    nextButton.addEventListener("click", (() => {
-                        removeAllHover(container);
-                        const nextItem = item.parentElement.nextElementSibling;
-                        if (nextItem) nextItem.querySelector(".type-pack__item").classList.add("_hover");
-                    }));
-                }));
-            }
-        }));
-    }
-    const wrappers = document.querySelectorAll(".swiper__wrapper");
-    wrappers.forEach((wrapper => {
-        setupBlock(wrapper);
-    }));
-    document.addEventListener("DOMContentLoaded", (function() {
-        var winPopup = document.querySelector(".win-popup");
-        if (winPopup) {
-            setTimeout((function() {
-                winPopup.classList.add("opened");
-            }), 2500);
-            var closeButton = document.querySelector(".win-popup__close");
-            if (closeButton) closeButton.addEventListener("click", (function() {
-                winPopup.classList.remove("opened");
-            }));
-        }
-    }));
     window["FLS"] = false;
     isWebp();
     addTouchClass();
