@@ -144,6 +144,30 @@ function initSliders() {
 			},
 		});
 	}
+	if (document.querySelector('.slider-five')) {
+		new Swiper('.slider-five', {
+			modules: [Navigation],
+			observer: true,
+			observeParents: true,
+			// slidesPerView: 3,
+			spaceBetween: 0,
+			loop: true,
+			speed: 500,
+			navigation: {
+				prevEl: '.slider-five .swiper-button-prev',
+				nextEl: '.slider-five .swiper-button-next',
+			},
+			breakpoints: {
+				320: {
+					slidesPerView: 1,
+				},
+				901: {
+					slidesPerView: 3,
+				}
+				
+			},
+		});
+	}
 }
 
 window.addEventListener("load", function (e) {

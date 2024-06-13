@@ -411,6 +411,7 @@ export class FullPage {
 		const secBlack = document.querySelector('.sec-black');
 		const secGreen = document.querySelector('.sec-green');
 		const secFruit = document.querySelector('.sec-fruit');
+		const secConct = document.querySelector('.sec-conct');
 		const secAbout = document.querySelector('.sec-about');
 		const secType = document.querySelector('.sec-type');
 		const secConts = document.querySelector('.sec-conts');
@@ -442,14 +443,19 @@ export class FullPage {
 				this.switchingSection(3);
 			});
 		}
+		if (secConct) {
+			secConct.addEventListener("click", () => {
+				this.switchingSection(4);
+			});
+		}
 		if (secAbout) {
 			secAbout.addEventListener("click", () => {
-				this.switchingSection(4);
+				this.switchingSection(5);
 			});
 		}
 		if (secConts) {
 			secConts.addEventListener("click", () => {
-				this.switchingSection(4);
+				this.switchingSection(5);
 			});
 		}
 		if (secType) {
@@ -464,12 +470,12 @@ export class FullPage {
 		}
 		if (menuHeroAbout) {
 			menuHeroAbout.addEventListener("click", () => {
-				this.switchingSection(4);
+				this.switchingSection(5);
 			});
 		}
 		if (menuHeroConts) {
 			menuHeroConts.addEventListener("click", () => {
-				this.switchingSection(4);
+				this.switchingSection(5);
 			});
 		}
 		if (heroLinkBtn) {

@@ -10,80 +10,80 @@
 			opacity: 0;
 		}
 	</style>
-	<link rel="stylesheet" href="css/style.min.css?_v=20240416184449">
+	<link rel="stylesheet" href="css/style.min.css?_v=20240613221117">
 	<link rel="shortcut icon" href="favicon.ico">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
 <body>
 	<div class="wrapper">
+
 		<header class="header">
 			<div class="header__body">
 				<div class="header__menu menu">
-					<button type="button" class="menu__icon icon-menu"><span></span></button>
-					<img class="menu__logo" src="img/icons/logo.svg" alt="logo">
+					<button type="button" class="menu__icon icon-menu" aria-label="відкривання мобільного меню"><span></span></button>
+					<img class="menu__logo" src="img/icons/logo.svg" width="60" height="75" alt="logo">
 					<nav class="menu__nav nav">
+						<div class=" list-pc">
+							<div class="list-pc__body">
+								<button type="button" class="list-pc__btn" aria-label="відкривання меню">
+									<span>Чорний</span>
+									<svg width="18" height="11" viewBox="0 0 18 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<path fill-rule="evenodd" clip-rule="evenodd" d="M0.292969 1.70718L1.70718 0.292969L9.00008 7.58586L16.293 0.292969L17.7072 1.70718L9.00008 10.4143L0.292969 1.70718Z" fill="white" />
+									</svg>
+								</button>
+								<ul class="list-pc__list">
+									<li class="list-pc__item">
+										<a href="#" class="list-pc__link sec-black" aria-label="перемикання на екран чаю Чорний">ЧОРНИЙ</a>
+									</li>
+									<li class="list-pc__item">
+										<a href="#" class="list-pc__link sec-green" aria-label="перемикання на екран чаю Зелений">ЗЕЛЕНИЙ</a>
+									</li>
+									<li class="list-pc__item">
+										<a href="#" class="list-pc__link sec-fruit" aria-label="перемикання на екран чаю Фруктово-ягідний">ФРУКТОВО-ЯГІДНИЙ</a>
+									</li>
+									<li class="list-pc__item">
+										<a href="#" class="list-pc__link sec-conct" aria-label="перемикання на екран чаю Фруктово-ягідний">КОНЦЕНТРОВАНИЙ</a>
+									</li>
+								</ul>
+							</div>
+						</div>
 						<ul class="nav__list">
-							<li class="nav__item"><a href="#" class="nav__link sec-black">ЧОРНИЙ</a></li>
-							<li class="nav__item"><a href="#" class="nav__link sec-green">ЗЕЛЕНИЙ</a></li>
-							<li class="nav__item"><a href="#" class="nav__link sec-fruit">ФРУКТОВО-ЯГІДНИЙ</a></li>
-						</ul>
-						<ul class="nav__list">
-							<li class="nav__item"><a href="#" class="nav__link sec-type">ВИДИ ЧАЮ</a></li>
-							<li class="nav__item"><a href="#" class="nav__link sec-about">про нас</a></li>
-							<li class="nav__item"><a href="#" class="nav__link sec-conts">КОНТАКТИ</a></li>
+							<li class="nav__item"><a href="#" class="nav__link sec-type" aria-label="перемикання на екран Види чаю">ВИДИ ЧАЮ</a></li>
+							<li class="nav__item"><a href="#" class="nav__link sec-about" aria-label="перемикання на екран Про нас">про нас</a></li>
+							<li class="nav__item"><a href="#" class="nav__link sec-conts" aria-label="перемикання на екран Контакти">КОНТАКТИ</a></li>
 						</ul>
 					</nav>
 				</div>
 			</div>
 		</header>
+
 		<div class="bg-main">
 			<div class="bg-main__bg bg-0">
-				<img class="bg-main__image " src="img/bg/bg-pc.svg" alt="background">
+				<picture>
+					<source srcset="img/bg/bg-pc.svg" media="(min-width: 37.561em)" type="image/svg+xml">
+					<source srcset="img/bg/bg-mob.svg" media="(max-width: 37.561em)" type="image/svg+xml">
+					<img class="bg-main__image" src="img/bg/bg-pc.svg" width="1366" height="1024" alt="image">
+				</picture>
 			</div>
-			<div class="bg-main__bg bg-1">
-				<img class="bg-main__image " src="img/bg/bg-pc.svg" alt="background">
-			</div>
-			<div class="bg-main__bg bg-2">
-				<img class="bg-main__image " src="img/bg/bg-pc.svg" alt="background">
-			</div>
-			<div class="bg-main__bg bg-3">
-				<img class="bg-main__image " src="img/bg/bg-pc.svg" alt="background">
-			</div>
-			<div class="bg-main__bg bg-4">
-				<img class="bg-main__image " src="img/bg/bg-pc.svg" alt="background">
-			</div>
-			<div class="bg-main__bg bg-5">
-				<img class="bg-main__image " src="img/bg/bg-pc.svg" alt="background">
-			</div>
-			<div class="bg-main__bg bg-6">
-				<img class="bg-main__image " src="img/bg/bg-pc.svg" alt="background">
-			</div>
-			<div class="bg-main__bg bg-7">
-				<img class="bg-main__image " src="img/bg/bg-pc.svg" alt="background">
-			</div>
-			<div class="bg-main__bg bg-8">
-				<img class="bg-main__image " src="img/bg/bg-pc.svg" alt="background">
-			</div>
-			<div class="bg-main__bg bg-9">
-				<img class="bg-main__image " src="img/bg/bg-pc.svg" alt="background">
-			</div>
-			<div class="bg-main__bg bg-10">
-				<img class="bg-main__image " src="img/bg/bg-pc.svg" alt="background">
-			</div>
-			<div class="bg-main__bg bg-11">
-				<img class="bg-main__image " src="img/bg/bg-pc.svg" alt="background">
-			</div>
-			<div class="bg-main__bg bg-12">
-				<img class="bg-main__image " src="img/bg/bg-pc.svg" alt="background">
-			</div>
-			<div class="bg-main__bg bg-13">
-				<img class="bg-main__image " src="img/bg/bg-pc.svg" alt="background">
-			</div>
-			<div class="bg-main__bg bg-14">
-				<img class="bg-main__image " src="img/bg/bg-pc.svg" alt="background">
-			</div>
+			<div class="bg-main__bg bg-1"></div>
+			<div class="bg-main__bg bg-2"></div>
+			<div class="bg-main__bg bg-3"></div>
+			<div class="bg-main__bg bg-4"></div>
+			<div class="bg-main__bg bg-5"></div>
+			<div class="bg-main__bg bg-6"></div>
+			<div class="bg-main__bg bg-7"></div>
+			<div class="bg-main__bg bg-8"></div>
+			<div class="bg-main__bg bg-9"></div>
+			<div class="bg-main__bg bg-10"></div>
+			<div class="bg-main__bg bg-11"></div>
+			<div class="bg-main__bg bg-12"></div>
+			<div class="bg-main__bg bg-13"></div>
+			<div class="bg-main__bg bg-14"></div>
+			<div class="bg-main__bg bg-15"></div>
+			<div class="bg-main__bg bg-16"></div>
 		</div>
+		
 		<div class="hero__menu menu-hero">
 			<nav class="menu-hero__nav">
 				<ul class="menu-hero__list">
@@ -104,41 +104,40 @@
 				<div class="hero__title title-hero">
 					<div class="title-hero__body">
 						<div data-da=".title-hero__sub,480,0" class="title-hero__left">
-							<img class="title-hero__img-l" src="img/icons/title-01.svg" alt="text magic">
+							<img class="title-hero__img-l" src="img/icons/title-01.svg" width="630" height="140" alt="text magic">
 						</div>
 						<div class="title-hero__center">
-							<img class="title-hero__img-c" src="img/icons/moon-main.svg" alt="logo">
+							<img class="title-hero__img-c" src="img/icons/moon-main.svg" width="270" height="290" alt="logo">
 							<div class="title-hero__stars stars">
-								<div class="stars__img star-width-1"><img data-prlx-mouse data-prlx-dxr data-prlx-cx="10" src="img/icons/star.svg" alt="star"></div>
-								<div class="stars__img star-width-1"><img data-prlx-mouse data-prlx-dxy data-prlx-cy="10" src="img/icons/star.svg" alt="star"></div>
-								<div class="stars__img star-width-1"><img data-prlx-mouse data-prlx-dxr data-prlx-cx="10" src="img/icons/star.svg" alt="star"></div>
-								<div class="stars__img star-width-1"><img data-prlx-mouse data-prlx-dxy data-prlx-cy="10" src="img/icons/star.svg" alt="star"></div>
-								<div class="stars__img star-width-1"><img data-prlx-mouse data-prlx-dxr data-prlx-cx="10" src="img/icons/star.svg" alt="star"></div>
-								<div class="stars__img star-width-1"><img data-prlx-mouse data-prlx-dxy data-prlx-cy="10" src="img/icons/star.svg" alt="star"></div>
-								<div class="stars__img star-width-1"><img data-prlx-mouse data-prlx-dxr data-prlx-cx="10" src="img/icons/star.svg" alt="star"></div>
-								<div class="stars__img star-width-1"><img data-prlx-mouse data-prlx-dxy data-prlx-cy="10" src="img/icons/star.svg" alt="star"></div>
-								<div class="stars__img star-width-2"><img data-prlx-mouse data-prlx-dxy data-prlx-cx="10" src="img/icons/star.svg" alt="star"></div>
-								<div class="stars__img star-width-2"><img data-prlx-mouse data-prlx-dxr data-prlx-cy="10" src="img/icons/star.svg" alt="star"></div>
-								<div class="stars__img star-width-2"><img data-prlx-mouse data-prlx-dxy data-prlx-cx="10" src="img/icons/star.svg" alt="star"></div>
-								<div class="stars__img star-width-2"><img data-prlx-mouse data-prlx-dxr data-prlx-cy="10" src="img/icons/star.svg" alt="star"></div>
-								<div class="stars__img star-width-3"><img data-prlx-mouse data-prlx-dxy data-prlx-cy src="img/icons/star.svg" alt="star"></div>
-								<div class="stars__img star-width-3"><img data-prlx-mouse data-prlx-dxy data-prlx-cy="20" src="img/icons/star.svg" alt="star"></div>
-								<div class="stars__img star-width-4"><img data-prlx-mouse data-prlx-dxy data-prlx-cy src="img/icons/star.svg" alt="star"></div>
-								<div class="stars__img star-width-5"><img data-prlx-mouse data-prlx-dxy data-prlx-cy src="img/icons/star.svg" alt="star"></div>
-								<div class="stars__img star-width-5"><img data-prlx-mouse data-prlx-dxy data-prlx-cy src="img/icons/star.svg" alt="star"></div>
+								<div class="stars__img star-width-1"><img data-prlx-mouse data-prlx-dxr data-prlx-cx="10" src="img/icons/star.svg" width="10" height="10" alt="star"></div>
+								<div class="stars__img star-width-1"><img data-prlx-mouse data-prlx-dxy data-prlx-cy="10" src="img/icons/star.svg" width="10" height="10" alt="star"></div>
+								<div class="stars__img star-width-1"><img data-prlx-mouse data-prlx-dxr data-prlx-cx="10" src="img/icons/star.svg" width="10" height="10" alt="star"></div>
+								<div class="stars__img star-width-1"><img data-prlx-mouse data-prlx-dxy data-prlx-cy="10" src="img/icons/star.svg" width="10" height="10" alt="star"></div>
+								<div class="stars__img star-width-1"><img data-prlx-mouse data-prlx-dxr data-prlx-cx="10" src="img/icons/star.svg" width="10" height="10" alt="star"></div>
+								<div class="stars__img star-width-1"><img data-prlx-mouse data-prlx-dxy data-prlx-cy="10" src="img/icons/star.svg" width="10" height="10" alt="star"></div>
+								<div class="stars__img star-width-1"><img data-prlx-mouse data-prlx-dxr data-prlx-cx="10" src="img/icons/star.svg" width="10" height="10" alt="star"></div>
+								<div class="stars__img star-width-1"><img data-prlx-mouse data-prlx-dxy data-prlx-cy="10" src="img/icons/star.svg" width="10" height="10" alt="star"></div>
+								<div class="stars__img star-width-2"><img data-prlx-mouse data-prlx-dxy data-prlx-cx="10" src="img/icons/star.svg" width="10" height="10" alt="star"></div>
+								<div class="stars__img star-width-2"><img data-prlx-mouse data-prlx-dxr data-prlx-cy="10" src="img/icons/star.svg" width="10" height="10" alt="star"></div>
+								<div class="stars__img star-width-2"><img data-prlx-mouse data-prlx-dxy data-prlx-cx="10" src="img/icons/star.svg" width="10" height="10" alt="star"></div>
+								<div class="stars__img star-width-2"><img data-prlx-mouse data-prlx-dxr data-prlx-cy="10" src="img/icons/star.svg" width="10" height="10" alt="star"></div>
+								<div class="stars__img star-width-3"><img data-prlx-mouse data-prlx-dxy data-prlx-cy src="img/icons/star.svg" width="10" height="10" alt="star"></div>
+								<div class="stars__img star-width-3"><img data-prlx-mouse data-prlx-dxy data-prlx-cy="20" src="img/icons/star.svg" width="10" height="10" alt="star"></div>
+								<div class="stars__img star-width-4"><img data-prlx-mouse data-prlx-dxy data-prlx-cy src="img/icons/star.svg" width="10" height="10" alt="star"></div>
+								<div class="stars__img star-width-5"><img data-prlx-mouse data-prlx-dxy data-prlx-cy src="img/icons/star.svg" width="10" height="10" alt="star"></div>
+								<div class="stars__img star-width-5"><img data-prlx-mouse data-prlx-dxy data-prlx-cy src="img/icons/star.svg" width="10" height="10" alt="star"></div>
 							</div>
 						</div>
 						<div data-da=".title-hero__sub,480,1" class="title-hero__right">
-							<img class="title-hero__img-r" src="img/icons/title-02.svg" alt="text moon">
+							<img class="title-hero__img-r" src="img/icons/title-02.svg" width="630" height="140" alt="text moon">
 						</div>
 					</div>
 					<div class="title-hero__sub">
 						<p class="title-hero__subtitle">Магічний світ чаю...</p>
 					</div>
 				</div>
-
 				<div class="hero__cup">
-					<picture><source srcset="img/cup.webp" type="image/webp"><img class="hero__cup-img" src="img/cup.png" alt="cup of tea"></picture>
+					<picture><source srcset="img/cup.webp" type="image/webp"><img class="hero__cup-img" src="img/cup.png" width="1000" height="500" alt="cup of tea"></picture>
 					<div class="hero__circle-link circle-link">
 						<a href="#" class="circle-link__link link-big hero-link-btn">
 							<span class="circle-link__circle-body">
@@ -662,48 +661,176 @@
 					</div>
 				</div>
 			</section>
+			<section data-fp-section class="section five">
+				<div class="five__wrapper type-pack__wrapper">
+					<div class="five__title type-pack__title">
+						<div class="five__title-wrap title-wrapper">
+							<img class="five__title-img title-wrapper__img" src="img/icons/title-сoncentrat.svg" alt="концентрований чай">
+						</div>
+					</div>
+					<div class="five__type type-pack">
+						<div class="five__slider slider-five swiper">
+							<div class="swiper__wrapper swiper__wrapper_third swiper-wrapper">
+								<div class="swiper__slide five__slide swiper-slide">
+									<div class="type-pack__item">
+										<div class="type-pack__img-wrp">
+											<a href="#" class="type-pack__img-link">
+												<picture><source srcset="img/pack/concentrat-01.webp" type="image/webp"><img class="type-pack__img" src="img/pack/concentrat-01.png" alt="чай Обліпиховий"></picture>
+											</a>
+										</div>
+										<div class="type-pack__circle-link circle-link">
+											<a href="#" class="circle-link__link link-sm">
+												<span class="circle-link__circle-body">
+													<picture><source srcset="img/elem/concentrat-01-sm.webp" type="image/webp"><img class="circle-link__img" src="img/elem/concentrat-01-sm.png" width="100" height="160" alt="чай Обліпиховий"></picture>
+												</span>
+												<img class="circle-link__img-circle" src="img/elem/circle-txt-2.svg" width="150" height="150" alt="купити">
+											</a>
+										</div>
+										<div class="type-pack__footer">
+											<a href="#" data-popup="#popup20" class="type-pack__footer-btn btn-footer_t-conctr">Детальніше</a>
+											<div class="type-pack__radial"></div>
+										</div>
+									</div>
+								</div>
+								<div class="swiper__slide five__slide swiper-slide">
+									<div class="type-pack__item">
+										<div class="type-pack__img-wrp">
+											<a href="#" class="type-pack__img-link">
+												<picture><source srcset="img/pack/concentrat-02.webp" type="image/webp"><img class="type-pack__img" src="img/pack/concentrat-02.png" alt="чай Смородиновий"></picture>
+											</a>
+										</div>
+										<div class="type-pack__circle-link circle-link">
+											<a href="#" class="circle-link__link link-sm">
+												<span class="circle-link__circle-body">
+													<picture><source srcset="img/elem/concentrat-02-sm.webp" type="image/webp"><img class="circle-link__img" src="img/elem/concentrat-02-sm.png" width="100" height="160" alt="чай Смородиновий"></picture>
+												</span>
+												<img class="circle-link__img-circle" src="img/elem/circle-txt-2.svg" width="150" height="150" alt="купити">
+											</a>
+										</div>
+										<div class="type-pack__footer">
+											<a href="#" data-popup="#popup21" class="type-pack__footer-btn btn-footer_t-conctr">Детальніше</a>
+											<div class="type-pack__radial"></div>
+										</div>
+									</div>
+								</div>
+								<div class="swiper__slide five__slide swiper-slide">
+									<div class="type-pack__item">
+										<div class="type-pack__img-wrp">
+											<a href="#" class="type-pack__img-link">
+												<picture><source srcset="img/pack/concentrat-03.webp" type="image/webp"><img class="type-pack__img" src="img/pack/concentrat-03.png" alt="чай Малиновий"></picture>
+											</a>
+										</div>
+										<div class="type-pack__circle-link circle-link">
+											<a href="#" class="circle-link__link link-sm">
+												<span class="circle-link__circle-body">
+													<picture><source srcset="img/elem/concentrat-03-sm.webp" type="image/webp"><img class="circle-link__img" src="img/elem/concentrat-03-sm.png" width="100" height="160" alt="чай Малиновий"></picture>
+												</span>
+												<img class="circle-link__img-circle" src="img/elem/circle-txt-2.svg" width="150" height="150" alt="купити">
+											</a>
+										</div>
+										<div class="type-pack__footer">
+											<a href="#" data-popup="#popup22" class="type-pack__footer-btn btn-footer_t-conctr">Детальніше</a>
+											<div class="type-pack__radial"></div>
+										</div>
+									</div>
+								</div>
+								<div class="swiper__slide five__slide swiper-slide">
+									<div class="type-pack__item">
+										<div class="type-pack__img-wrp">
+											<a href="#" class="type-pack__img-link">
+												<picture><source srcset="img/pack/concentrat-04.webp" type="image/webp"><img class="type-pack__img" src="img/pack/concentrat-04.png" alt="чай Журавлиний"></picture>
+											</a>
+										</div>
+										<div class="type-pack__circle-link circle-link">
+											<a href="#" class="circle-link__link link-sm">
+												<span class="circle-link__circle-body">
+													<picture><source srcset="img/elem/concentrat-04-sm.webp" type="image/webp"><img class="circle-link__img" src="img/elem/concentrat-04-sm.png" width="100" height="160" alt="чай Журавлиний"></picture>
+												</span>
+												<img class="circle-link__img-circle" src="img/elem/circle-txt-2.svg" width="150" height="150" alt="купити">
+											</a>
+										</div>
+										<div class="type-pack__footer">
+											<a href="#" data-popup="#popup23" class="type-pack__footer-btn btn-footer_t-conctr">Детальніше</a>
+											<div class="type-pack__radial"></div>
+										</div>
+									</div>
+								</div>
+								<div class="swiper__slide five__slide swiper-slide">
+									<div class="type-pack__item">
+										<div class="type-pack__img-wrp">
+											<a href="#" class="type-pack__img-link">
+												<picture><source srcset="img/pack/concentrat-05.webp" type="image/webp"><img class="type-pack__img" src="img/pack/concentrat-05.png" alt="чай Імбирний"></picture>
+											</a>
+										</div>
+										<div class="type-pack__circle-link circle-link">
+											<a href="#" class="circle-link__link link-sm">
+												<span class="circle-link__circle-body">
+													<picture><source srcset="img/elem/concentrat-05-sm.webp" type="image/webp"><img class="circle-link__img" src="img/elem/concentrat-05-sm.png" width="100" height="160" alt="чай Імбирний"></picture>
+												</span>
+												<img class="circle-link__img-circle" src="img/elem/circle-txt-2.svg" width="150" height="150" alt="купити">
+											</a>
+										</div>
+										<div class="type-pack__footer">
+											<a href="#" data-popup="#popup24" class="type-pack__footer-btn btn-footer_t-conctr">Детальніше</a>
+											<div class="type-pack__radial"></div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="swiper__button">
+								<button type="button" class="swiper-button swiper-button-prev">
+									<img src="img/icons/arr.svg" alt="arrow">
+								</button>
+								<button type="button" class="swiper-button swiper-button-next">
+									<img src="img/icons/arr.svg" alt="arrow">
+								</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
 			<section data-fp-section class="section fourth">
 				<div class="fourth__container">
 					<div class="fourth__top">
 						<div class="fourth__top-body">
 							<div class="fourth__stars stars-fourth">
 								<div class="stars-fourth__left stars">
-									<div class="stars__img star-width-1"><img data-prlx-mouse data-prlx-dxr data-prlx-cx="10" src="img/icons/star.svg" alt="star"></div>
-									<div class="stars__img star-width-1"><img data-prlx-mouse data-prlx-dxy data-prlx-cy="10" src="img/icons/star.svg" alt="star"></div>
-									<div class="stars__img star-width-1"><img data-prlx-mouse data-prlx-dxr data-prlx-cx="10" src="img/icons/star.svg" alt="star"></div>
-									<div class="stars__img star-width-1"><img data-prlx-mouse data-prlx-dxy data-prlx-cy="10" src="img/icons/star.svg" alt="star"></div>
-									<div class="stars__img star-width-1"><img data-prlx-mouse data-prlx-dxr data-prlx-cx="10" src="img/icons/star.svg" alt="star"></div>
-									<div class="stars__img star-width-1"><img data-prlx-mouse data-prlx-dxy data-prlx-cy="10" src="img/icons/star.svg" alt="star"></div>
-									<div class="stars__img star-width-1"><img data-prlx-mouse data-prlx-dxr data-prlx-cx="10" src="img/icons/star.svg" alt="star"></div>
-									<div class="stars__img star-width-1"><img data-prlx-mouse data-prlx-dxy data-prlx-cy="10" src="img/icons/star.svg" alt="star"></div>
-									<div class="stars__img star-width-2"><img data-prlx-mouse data-prlx-dxy data-prlx-cx="10" src="img/icons/star.svg" alt="star"></div>
-									<div class="stars__img star-width-2"><img data-prlx-mouse data-prlx-dxr data-prlx-cy="10" src="img/icons/star.svg" alt="star"></div>
-									<div class="stars__img star-width-2"><img data-prlx-mouse data-prlx-dxy data-prlx-cx="10" src="img/icons/star.svg" alt="star"></div>
-									<div class="stars__img star-width-2"><img data-prlx-mouse data-prlx-dxr data-prlx-cy="10" src="img/icons/star.svg" alt="star"></div>
-									<div class="stars__img star-width-3"><img data-prlx-mouse data-prlx-dxy data-prlx-cy src="img/icons/star.svg" alt="star"></div>
-									<div class="stars__img star-width-3"><img data-prlx-mouse data-prlx-dxy data-prlx-cy="20" src="img/icons/star.svg" alt="star"></div>
-									<div class="stars__img star-width-4"><img data-prlx-mouse data-prlx-dxy data-prlx-cy src="img/icons/star.svg" alt="star"></div>
-									<div class="stars__img star-width-5"><img data-prlx-mouse data-prlx-dxy data-prlx-cy src="img/icons/star.svg" alt="star"></div>
-									<div class="stars__img star-width-5"><img data-prlx-mouse data-prlx-dxy data-prlx-cy src="img/icons/star.svg" alt="star"></div>
+									<div class="stars__img star-width-1"><img data-prlx-mouse data-prlx-dxr data-prlx-cx="10" src="img/icons/star.svg" width="10" height="10" alt="star"></div>
+									<div class="stars__img star-width-1"><img data-prlx-mouse data-prlx-dxy data-prlx-cy="10" src="img/icons/star.svg" width="10" height="10" alt="star"></div>
+									<div class="stars__img star-width-1"><img data-prlx-mouse data-prlx-dxr data-prlx-cx="10" src="img/icons/star.svg" width="10" height="10" alt="star"></div>
+									<div class="stars__img star-width-1"><img data-prlx-mouse data-prlx-dxy data-prlx-cy="10" src="img/icons/star.svg" width="10" height="10" alt="star"></div>
+									<div class="stars__img star-width-1"><img data-prlx-mouse data-prlx-dxr data-prlx-cx="10" src="img/icons/star.svg" width="10" height="10" alt="star"></div>
+									<div class="stars__img star-width-1"><img data-prlx-mouse data-prlx-dxy data-prlx-cy="10" src="img/icons/star.svg" width="10" height="10" alt="star"></div>
+									<div class="stars__img star-width-1"><img data-prlx-mouse data-prlx-dxr data-prlx-cx="10" src="img/icons/star.svg" width="10" height="10" alt="star"></div>
+									<div class="stars__img star-width-1"><img data-prlx-mouse data-prlx-dxy data-prlx-cy="10" src="img/icons/star.svg" width="10" height="10" alt="star"></div>
+									<div class="stars__img star-width-2"><img data-prlx-mouse data-prlx-dxy data-prlx-cx="10" src="img/icons/star.svg" width="10" height="10" alt="star"></div>
+									<div class="stars__img star-width-2"><img data-prlx-mouse data-prlx-dxr data-prlx-cy="10" src="img/icons/star.svg" width="10" height="10" alt="star"></div>
+									<div class="stars__img star-width-2"><img data-prlx-mouse data-prlx-dxy data-prlx-cx="10" src="img/icons/star.svg" width="10" height="10" alt="star"></div>
+									<div class="stars__img star-width-2"><img data-prlx-mouse data-prlx-dxr data-prlx-cy="10" src="img/icons/star.svg" width="10" height="10" alt="star"></div>
+									<div class="stars__img star-width-3"><img data-prlx-mouse data-prlx-dxy data-prlx-cy src="img/icons/star.svg" width="10" height="10" alt="star"></div>
+									<div class="stars__img star-width-3"><img data-prlx-mouse data-prlx-dxy data-prlx-cy="20" src="img/icons/star.svg" width="10" height="10" alt="star"></div>
+									<div class="stars__img star-width-4"><img data-prlx-mouse data-prlx-dxy data-prlx-cy src="img/icons/star.svg" width="10" height="10" alt="star"></div>
+									<div class="stars__img star-width-5"><img data-prlx-mouse data-prlx-dxy data-prlx-cy src="img/icons/star.svg" width="10" height="10" alt="star"></div>
+									<div class="stars__img star-width-5"><img data-prlx-mouse data-prlx-dxy data-prlx-cy src="img/icons/star.svg" width="10" height="10" alt="star"></div>
 								</div>
 								<div class="stars-fourth__right stars">
-									<div class="stars__img star-width-1"><img data-prlx-mouse data-prlx-dxr data-prlx-cx="10" src="img/icons/star.svg" alt="star"></div>
-									<div class="stars__img star-width-1"><img data-prlx-mouse data-prlx-dxy data-prlx-cy="10" src="img/icons/star.svg" alt="star"></div>
-									<div class="stars__img star-width-1"><img data-prlx-mouse data-prlx-dxr data-prlx-cx="10" src="img/icons/star.svg" alt="star"></div>
-									<div class="stars__img star-width-1"><img data-prlx-mouse data-prlx-dxy data-prlx-cy="10" src="img/icons/star.svg" alt="star"></div>
-									<div class="stars__img star-width-1"><img data-prlx-mouse data-prlx-dxr data-prlx-cx="10" src="img/icons/star.svg" alt="star"></div>
-									<div class="stars__img star-width-1"><img data-prlx-mouse data-prlx-dxy data-prlx-cy="10" src="img/icons/star.svg" alt="star"></div>
-									<div class="stars__img star-width-1"><img data-prlx-mouse data-prlx-dxr data-prlx-cx="10" src="img/icons/star.svg" alt="star"></div>
-									<div class="stars__img star-width-1"><img data-prlx-mouse data-prlx-dxy data-prlx-cy="10" src="img/icons/star.svg" alt="star"></div>
-									<div class="stars__img star-width-2"><img data-prlx-mouse data-prlx-dxy data-prlx-cx="10" src="img/icons/star.svg" alt="star"></div>
-									<div class="stars__img star-width-2"><img data-prlx-mouse data-prlx-dxr data-prlx-cy="10" src="img/icons/star.svg" alt="star"></div>
-									<div class="stars__img star-width-2"><img data-prlx-mouse data-prlx-dxy data-prlx-cx="10" src="img/icons/star.svg" alt="star"></div>
-									<div class="stars__img star-width-2"><img data-prlx-mouse data-prlx-dxr data-prlx-cy="10" src="img/icons/star.svg" alt="star"></div>
-									<div class="stars__img star-width-3"><img data-prlx-mouse data-prlx-dxy data-prlx-cy src="img/icons/star.svg" alt="star"></div>
-									<div class="stars__img star-width-3"><img data-prlx-mouse data-prlx-dxy data-prlx-cy="20" src="img/icons/star.svg" alt="star"></div>
-									<div class="stars__img star-width-4"><img data-prlx-mouse data-prlx-dxy data-prlx-cy src="img/icons/star.svg" alt="star"></div>
-									<div class="stars__img star-width-5"><img data-prlx-mouse data-prlx-dxy data-prlx-cy src="img/icons/star.svg" alt="star"></div>
-									<div class="stars__img star-width-5"><img data-prlx-mouse data-prlx-dxy data-prlx-cy src="img/icons/star.svg" alt="star"></div>
+									<div class="stars__img star-width-1"><img data-prlx-mouse data-prlx-dxr data-prlx-cx="10" src="img/icons/star.svg" width="10" height="10" alt="star"></div>
+									<div class="stars__img star-width-1"><img data-prlx-mouse data-prlx-dxy data-prlx-cy="10" src="img/icons/star.svg" width="10" height="10" alt="star"></div>
+									<div class="stars__img star-width-1"><img data-prlx-mouse data-prlx-dxr data-prlx-cx="10" src="img/icons/star.svg" width="10" height="10" alt="star"></div>
+									<div class="stars__img star-width-1"><img data-prlx-mouse data-prlx-dxy data-prlx-cy="10" src="img/icons/star.svg" width="10" height="10" alt="star"></div>
+									<div class="stars__img star-width-1"><img data-prlx-mouse data-prlx-dxr data-prlx-cx="10" src="img/icons/star.svg" width="10" height="10" alt="star"></div>
+									<div class="stars__img star-width-1"><img data-prlx-mouse data-prlx-dxy data-prlx-cy="10" src="img/icons/star.svg" width="10" height="10" alt="star"></div>
+									<div class="stars__img star-width-1"><img data-prlx-mouse data-prlx-dxr data-prlx-cx="10" src="img/icons/star.svg" width="10" height="10" alt="star"></div>
+									<div class="stars__img star-width-1"><img data-prlx-mouse data-prlx-dxy data-prlx-cy="10" src="img/icons/star.svg" width="10" height="10" alt="star"></div>
+									<div class="stars__img star-width-2"><img data-prlx-mouse data-prlx-dxy data-prlx-cx="10" src="img/icons/star.svg" width="10" height="10" alt="star"></div>
+									<div class="stars__img star-width-2"><img data-prlx-mouse data-prlx-dxr data-prlx-cy="10" src="img/icons/star.svg" width="10" height="10" alt="star"></div>
+									<div class="stars__img star-width-2"><img data-prlx-mouse data-prlx-dxy data-prlx-cx="10" src="img/icons/star.svg" width="10" height="10" alt="star"></div>
+									<div class="stars__img star-width-2"><img data-prlx-mouse data-prlx-dxr data-prlx-cy="10" src="img/icons/star.svg" width="10" height="10" alt="star"></div>
+									<div class="stars__img star-width-3"><img data-prlx-mouse data-prlx-dxy data-prlx-cy src="img/icons/star.svg" width="10" height="10" alt="star"></div>
+									<div class="stars__img star-width-3"><img data-prlx-mouse data-prlx-dxy data-prlx-cy="20" src="img/icons/star.svg" width="10" height="10" alt="star"></div>
+									<div class="stars__img star-width-4"><img data-prlx-mouse data-prlx-dxy data-prlx-cy src="img/icons/star.svg" width="10" height="10" alt="star"></div>
+									<div class="stars__img star-width-5"><img data-prlx-mouse data-prlx-dxy data-prlx-cy src="img/icons/star.svg" width="10" height="10" alt="star"></div>
+									<div class="stars__img star-width-5"><img data-prlx-mouse data-prlx-dxy data-prlx-cy src="img/icons/star.svg" width="10" height="10" alt="star"></div>
 								</div>
 							</div>
 							<h2 class="fourth__title">Ласкаво просимо до "MAGIC MOON" –<br> світу магії в кожному ковтку чаю.</h2>
@@ -954,7 +1081,7 @@
 							<div class="composition__body">
 								<div class="composition__block">
 									<p class="composition__txt">
-										<b>Склад:</b> чай чорний подрібнений, чай зелений подрібнений, суміш ягід та трав сушених, ароматизатор «Полуниця».
+										<b>Склад:</b> чай чорний подрібнений.
 									</p>
 								</div>
 								<div class="composition__block">
@@ -1913,7 +2040,7 @@
 							</div>
 							<div class="popup__info info-popup">
 								<p class="info-popup__txt">
-									"Pink Sunset" - це чай зелений байховий дрібний, що приваблює своїм ніжним смаком та ароматом. Його особлива суміш включає у себе яблуко, пелюстки квітів та аромати малини і маракуї. Кожен ковток цього напою - це справжня подорож до розкішного рожевого закату, що залишить вам незабутні враження про спокій та гармонію.
+									"Pink Sunset" - це чай зелений байховий дрібний, що приваблює своїм ніжним смаком та ароматом. Його особлива суміш включає у себе яблуко, пелюстки квітів та аромати малини і маракуї. Кожен ковток цього напою - це справжня подорож до розкішного рожевого заходу сонця, що залишить вам незабутні враження про спокій та гармонію.
 								</p>
 								<a href="#" class="info-popup__link"><span>купити</span></a>
 								<div class="info-popup__images">
@@ -2085,6 +2212,319 @@
 		</div>
 	</div>
 
+	<div id="popup20" aria-hidden="true" class="popup popup-20">
+		<div class="popup__wrapper">
+			<div class="popup__content">
+				<div class="popup__container">
+					<div class="popup__title popup__title_fruit">
+						<img src="img/icons/title-сoncentrat.svg" width="600" height="100" alt="заголовок концентрований чай">
+					</div>
+					<div class="popup__main">
+						<button data-close type="button" class="popup__close">
+							<img src="img/icons/arr.svg" width="60" height="60" alt="arrow">
+						</button>
+						<div class="popup__head">
+							<div class="popup__head-body head-body-popup-20">
+								<div class="popup__head-wr head-wr-popup-20">
+									<h3 class="popup__name">
+										Чай пастеризований «Обліпиховий»
+									</h3>
+								</div>
+								<div data-da=".head-wr-popup-20,480,1" class="popup__name-icon">
+									<picture><source srcset="img/elem/ic-conc-01.webp" type="image/webp"><img src="img/elem/ic-conc-01.png" width="88" height="88" alt="element decor"></picture>
+								</div>
+							</div>
+						</div>
+						<div class="popup__body">
+							<div class="popup__images">
+								<div class="popup__images-wr-v">
+									<picture><source srcset="img/pack/concentrat-01.webp" type="image/webp"><img class="popup__img-vert" src="img/pack/concentrat-01.png" width="360" height="600" alt="чай Обліпиховий"></picture>
+								</div>
+							</div>
+							<div class="popup__info info-popup">
+								<p class="info-popup__txt">
+									Концентрований чай «Обліпиховий» ТМ Magic Moon – це багатий на смак і корисні властивості напій, що поєднує у собі обліпиху, натуральний мед, корінь імбиру та лайм. Обліпиха дарує насичений, трохи кислуватий смак, мед додає природної солодкості, а імбир і кориця приносять теплі, пряні нотки. Бадьян завершує цей букет, надаючи напою вишуканий аромат. Насолоджуйтесь цим чаєм, отримуючи заряд вітамінів та енергії.
+								</p>
+								<a href="#" class="info-popup__link" aria-label="посилання на сайт для покупки"><span>купити</span></a>
+							</div>
+						</div>
+						<div class="popup__composition composition">
+							<div class="composition__body">
+								<div class="composition__block">
+									<p class="composition__txt">
+										<b>Склад:</b> обліпиха свіжа швидкозаморожена 48 %, цукор, мед натуральний 15 %, корінь імбиру свіжий 4 %, лайм свіжий 3 %, кориця мелена 0,5 %, бадьян мелений 0,2 %.
+									</p>
+								</div>
+								<div class="composition__block">
+									<p class="composition__txt">
+										<b>Країна похождення чайного листа:</b>
+										Україна.
+									</p>
+									<p class="composition__txt">
+										<b>Розфасовка:</b> 1 шт (40г)
+									</p>
+									<p class="composition__txt">
+										<b>Шоу бокс:</b> 12 шт (40г)
+									</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="popup21" aria-hidden="true" class="popup popup-21">
+		<div class="popup__wrapper">
+			<div class="popup__content">
+				<div class="popup__container">
+					<div class="popup__title popup__title_fruit">
+						<img src="img/icons/title-сoncentrat.svg" width="600" height="100" alt="заголовок концентрований чай">
+					</div>
+					<div class="popup__main">
+						<button data-close type="button" class="popup__close">
+							<img src="img/icons/arr.svg" width="60" height="60" alt="arrow">
+						</button>
+						<div class="popup__head">
+							<div class="popup__head-body head-body-popup-21">
+								<div class="popup__head-wr head-wr-popup-21">
+									<h3 class="popup__name">
+										Чай пастеризований «Смородиновий»
+									</h3>
+								</div>
+								<div data-da=".head-wr-popup-21,480,1" class="popup__name-icon">
+									<picture><source srcset="img/elem/fruit-wildberry.webp" type="image/webp"><img src="img/elem/fruit-wildberry.png" width="88" height="88" alt="element decor"></picture>
+								</div>
+							</div>
+						</div>
+						<div class="popup__body">
+							<div class="popup__images">
+								<div class="popup__images-wr-v">
+									<picture><source srcset="img/pack/concentrat-02.webp" type="image/webp"><img class="popup__img-vert" src="img/pack/concentrat-02.png" width="360" height="600" alt="чай Смородиновий"></picture>
+								</div>
+							</div>
+							<div class="popup__info info-popup">
+								<p class="info-popup__txt">
+									Концентрований чай «Смородиновий» Magic Moon – це насичений і ароматний напій, що поєднує чорну смородину, натуральний мед та базилік. Смородина надає чаю яскравий, трохи кислуватий смак, а мед додає приємної солодкості. Базилік привносить легкі пряні нотки, роблячи смак напою унікальним та освіжаючим. Цей чай ідеально підходить для тих, хто цінує природні інгредієнти та гармонійні смаки. Насолоджуйтесь кожною чашкою цього вітамінного еліксиру.
+
+								</p>
+								<a href="#" class="info-popup__link" aria-label="посилання на сайт для покупки"><span>купити</span></a>
+							</div>
+						</div>
+						<div class="popup__composition composition">
+							<div class="composition__body">
+								<div class="composition__block">
+									<p class="composition__txt">
+										<b>Склад:</b> цукор, смородина чорна свіжа швидкозаморожена 32 %, мед натуральний 22 %, базилік фіолетовий 4 %.
+									</p>
+								</div>
+								<div class="composition__block">
+									<p class="composition__txt">
+										<b>Країна похождення чайного листа:</b>
+										Україна.
+									</p>
+									<p class="composition__txt">
+										<b>Розфасовка:</b> 1 шт (40г)
+									</p>
+									<p class="composition__txt">
+										<b>Шоу бокс:</b> 12 шт (40г)
+									</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="popup22" aria-hidden="true" class="popup popup-22">
+		<div class="popup__wrapper">
+			<div class="popup__content">
+				<div class="popup__container">
+					<div class="popup__title popup__title_fruit">
+						<img src="img/icons/title-сoncentrat.svg" width="600" height="100" alt="заголовок концентрований чай">
+					</div>
+					<div class="popup__main">
+						<button data-close type="button" class="popup__close">
+							<img src="img/icons/arr.svg" width="60" height="60" alt="arrow">
+						</button>
+						<div class="popup__head">
+							<div class="popup__head-body head-body-popup-22">
+								<div class="popup__head-wr head-wr-popup-22">
+									<h3 class="popup__name">
+										Чай пастеризований «Малиновий»
+									</h3>
+								</div>
+								<div data-da=".head-wr-popup-22,480,1" class="popup__name-icon">
+									<picture><source srcset="img/elem/pink-sunset.webp" type="image/webp"><img src="img/elem/pink-sunset.png" width="88" height="88" alt="element decor"></picture>
+								</div>
+							</div>
+						</div>
+						<div class="popup__body">
+							<div class="popup__images">
+								<div class="popup__images-wr-v">
+									<picture><source srcset="img/pack/concentrat-03.webp" type="image/webp"><img class="popup__img-vert" src="img/pack/concentrat-03.png" width="360" height="600" alt="чай Малиновий"></picture>
+								</div>
+							</div>
+							<div class="popup__info info-popup">
+								<p class="info-popup__txt">
+									Концентрований чай «Малиновий» ТМ Magic Moon– це поєднання смаку свіжих ягід, що подарує вам справжнє задоволення. Основа напою – малина і чорна смородина, якінадають чаю насичений і ароматний смак. Натуральний мед додає солодкості, а свіжий корінь імбиру і мелена кориця створюють теплий, пряний відтінок. Цей чай – ідеальний вибір для тих, хтопрагне насолодитися природними ароматами і збалансованим смаком у кожній чашці.  
+
+								</p>
+								<a href="#" class="info-popup__link" aria-label="посилання на сайт для покупки"><span>купити</span></a>
+							</div>
+						</div>
+						<div class="popup__composition composition">
+							<div class="composition__body">
+								<div class="composition__block">
+									<p class="composition__txt">
+										<b>Склад:</b> малина свіжа швидкозаморожена 39 %, цукор, смородина чорна свіжа швидкозаморожена 9 %, мед натуральний 8 %, корінь імбиру свіжий 5 %, кориця мелена 0,2 %.
+									</p>
+								</div>
+								<div class="composition__block">
+									<p class="composition__txt">
+										<b>Країна похождення чайного листа:</b>
+										Україна.
+									</p>
+									<p class="composition__txt">
+										<b>Розфасовка:</b> 1 шт (40г)
+									</p>
+									<p class="composition__txt">
+										<b>Шоу бокс:</b> 12 шт (40г)
+									</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="popup23" aria-hidden="true" class="popup popup-23">
+		<div class="popup__wrapper">
+			<div class="popup__content">
+				<div class="popup__container">
+					<div class="popup__title popup__title_fruit">
+						<img src="img/icons/title-сoncentrat.svg" width="600" height="100" alt="заголовок концентрований чай">
+					</div>
+					<div class="popup__main">
+						<button data-close type="button" class="popup__close">
+							<img src="img/icons/arr.svg" width="60" height="60" alt="arrow">
+						</button>
+						<div class="popup__head">
+							<div class="popup__head-body head-body-popup-23">
+								<div class="popup__head-wr head-wr-popup-23">
+									<h3 class="popup__name">
+										Чай пастеризований «Журавлина»
+									</h3>
+								</div>
+								<div data-da=".head-wr-popup-23,480,1" class="popup__name-icon">
+									<picture><source srcset="img/elem/fruit-wildberry.webp" type="image/webp"><img src="img/elem/fruit-wildberry.png" width="88" height="88" alt="element decor"></picture>
+								</div>
+							</div>
+						</div>
+						<div class="popup__body">
+							<div class="popup__images">
+								<div class="popup__images-wr-v">
+									<picture><source srcset="img/pack/concentrat-04.webp" type="image/webp"><img class="popup__img-vert" src="img/pack/concentrat-04.png" width="360" height="600" alt="чай Журавлиний"></picture>
+								</div>
+							</div>
+							<div class="popup__info info-popup">
+								<p class="info-popup__txt">
+									Концентрований чай «Журавлина» ТМ Magic Moon– це натуральний напій, що поєднує яскравий смак журавлини, натуральний мед, свіжий лайм і корінь імбиру. Ароматні спеції і м'ятадодають освіжаючі нотки, роблячи цей чай справжнім еліксиром бадьорості та здоров'я. Насолоджуйтесь природною солодкістю і збалансованим смаком у кожній чашці. 
+								</p>
+								<a href="#" class="info-popup__link" aria-label="посилання на сайт для покупки"><span>купити</span></a>
+							</div>
+						</div>
+						<div class="popup__composition composition">
+							<div class="composition__body">
+								<div class="composition__block">
+									<p class="composition__txt">
+										<b>Склад:</b> цукор, журавлина свіжа швидкозаморожена 40 %, мед натуральний 9 %, лайм свіжий 4 %, корінь імбиру свіжий 4 %, аніс сухий, м'ята суха 0,2 %.
+									</p>
+								</div>
+								<div class="composition__block">
+									<p class="composition__txt">
+										<b>Країна похождення чайного листа:</b>
+										Україна.
+									</p>
+									<p class="composition__txt">
+										<b>Розфасовка:</b> 1 шт (40г)
+									</p>
+									<p class="composition__txt">
+										<b>Шоу бокс:</b> 12 шт (40г)
+									</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="popup24" aria-hidden="true" class="popup popup-24">
+		<div class="popup__wrapper">
+			<div class="popup__content">
+				<div class="popup__container">
+					<div class="popup__title popup__title_fruit">
+						<img src="img/icons/title-сoncentrat.svg" width="600" height="100" alt="заголовок концентрований чай">
+					</div>
+					<div class="popup__main">
+						<button data-close type="button" class="popup__close">
+							<img src="img/icons/arr.svg" width="60" height="60" alt="arrow">
+						</button>
+						<div class="popup__head">
+							<div class="popup__head-body head-body-popup-24">
+								<div class="popup__head-wr head-wr-popup-24">
+									<h3 class="popup__name">
+										Чай пастеризований «Імбирний»
+									</h3>
+								</div>
+								<div data-da=".head-wr-popup-24,480,1" class="popup__name-icon">
+									<picture><source srcset="img/elem/ic-conc-01.webp" type="image/webp"><img src="img/elem/ic-conc-01.png" width="88" height="88" alt="element decor"></picture>
+								</div>
+							</div>
+						</div>
+						<div class="popup__body">
+							<div class="popup__images">
+								<div class="popup__images-wr-v">
+									<picture><source srcset="img/pack/concentrat-05.webp" type="image/webp"><img class="popup__img-vert" src="img/pack/concentrat-05.png" width="360" height="600" alt="чай Імбирний"></picture>
+								</div>
+							</div>
+							<div class="popup__info info-popup">
+								<p class="info-popup__txt">
+									Концентрований чай «Імбирний» ТМ Magic Moon – ценапій, якийпоєднує в собі натуральний мед, свіжий корінь імбиру та лайм. Мед додає чаю ніжнусолодкість, а імбир і лайм забезпечують свіжий, злегка пікантний смак. Цей чай створений для тих, хтоцінуєприродні інгредієнти та шукає гармонійний баланс міжсолодкістю та гостротою. Насолоджуйтесь кожним ковтком, отримуючи заряд енергії та тепла.
+								</p>
+								<a href="#" class="info-popup__link" aria-label="посилання на сайт для покупки"><span>купити</span></a>
+							</div>
+						</div>
+						<div class="popup__composition composition">
+							<div class="composition__body">
+								<div class="composition__block">
+									<p class="composition__txt">
+										<b>Склад:</b> цукор, мед натуральний 22 %, корінь імбиру свіжий 16 %, лайм свіжий 7 %.
+									</p>
+								</div>
+								<div class="composition__block">
+									<p class="composition__txt">
+										<b>Країна похождення чайного листа:</b>
+										Україна.
+									</p>
+									<p class="composition__txt">
+										<b>Розфасовка:</b> 1 шт (40г)
+									</p>
+									<p class="composition__txt">
+										<b>Шоу бокс:</b> 12 шт (40г)
+									</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
 	<!-- <div class="win-popup">
 			<div class="win-popup__wrapper">
 				<div class="win-popup__content">
@@ -2114,7 +2554,7 @@
 			</div>
 		</div> -->
 
-	<script src="js/app.min.js?_v=20240416184449"></script>
+	<script src="js/app.min.js?_v=20240613221117"></script>
 </body>
 
 </html>

@@ -34,9 +34,6 @@
             return isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows();
         }
     };
-    function addTouchClass() {
-        if (isMobile.any()) document.documentElement.classList.add("touch");
-    }
     function addLoadedClass() {
         if (!document.documentElement.classList.contains("loading")) window.addEventListener("load", (function() {
             setTimeout((function() {
@@ -3555,6 +3552,26 @@
                 }
             }
         });
+        if (document.querySelector(".slider-five")) new Swiper(".slider-five", {
+            modules: [ Navigation ],
+            observer: true,
+            observeParents: true,
+            spaceBetween: 0,
+            loop: true,
+            speed: 500,
+            navigation: {
+                prevEl: ".slider-five .swiper-button-prev",
+                nextEl: ".slider-five .swiper-button-next"
+            },
+            breakpoints: {
+                320: {
+                    slidesPerView: 1
+                },
+                901: {
+                    slidesPerView: 3
+                }
+            }
+        });
     }
     window.addEventListener("load", (function(e) {
         initSliders();
@@ -3750,6 +3767,7 @@
             const secBlack = document.querySelector(".sec-black");
             const secGreen = document.querySelector(".sec-green");
             const secFruit = document.querySelector(".sec-fruit");
+            const secConct = document.querySelector(".sec-conct");
             const secAbout = document.querySelector(".sec-about");
             const secType = document.querySelector(".sec-type");
             const secConts = document.querySelector(".sec-conts");
@@ -3770,11 +3788,14 @@
             if (secFruit) secFruit.addEventListener("click", (() => {
                 this.switchingSection(3);
             }));
-            if (secAbout) secAbout.addEventListener("click", (() => {
+            if (secConct) secConct.addEventListener("click", (() => {
                 this.switchingSection(4);
             }));
+            if (secAbout) secAbout.addEventListener("click", (() => {
+                this.switchingSection(5);
+            }));
             if (secConts) secConts.addEventListener("click", (() => {
-                this.switchingSection(4);
+                this.switchingSection(5);
             }));
             if (secType) secType.addEventListener("click", (() => {
                 this.switchingSection(1);
@@ -3783,10 +3804,10 @@
                 this.switchingSection(1);
             }));
             if (menuHeroAbout) menuHeroAbout.addEventListener("click", (() => {
-                this.switchingSection(4);
+                this.switchingSection(5);
             }));
             if (menuHeroConts) menuHeroConts.addEventListener("click", (() => {
-                this.switchingSection(4);
+                this.switchingSection(5);
             }));
             if (heroLinkBtn) heroLinkBtn.addEventListener("click", (() => {
                 this.switchingSection(1);
@@ -3996,9 +4017,51 @@
     }
     const da = new DynamicAdapt("max");
     da.init();
+    document.addEventListener("DOMContentLoaded", (function() {
+        const firstBgMainElement = document.querySelector(".bg-main__bg");
+        if (firstBgMainElement && firstBgMainElement.firstElementChild) {
+            const childToClone = firstBgMainElement.firstElementChild.cloneNode(true);
+            const bgMainElements = document.querySelectorAll(".bg-main__bg");
+            bgMainElements.forEach(((element, index) => {
+                if (index !== 0) element.appendChild(childToClone.cloneNode(true));
+            }));
+        }
+        const listPcBody = document.querySelector(".list-pc__body");
+        const listPcBtn = document.querySelector(".list-pc__btn");
+        const listPcList = document.querySelector(".list-pc__list");
+        const listPcLinks = document.querySelectorAll(".list-pc__link");
+        const listPcBtnSpan = listPcBtn.querySelector("span");
+        const secBlack = document.querySelector(".sec-black");
+        const secGreen = document.querySelector(".sec-green");
+        const secFruit = document.querySelector(".sec-fruit");
+        const secConct = document.querySelector(".sec-conct");
+        if (listPcList) {
+            const listWidth = listPcList.offsetWidth;
+            listPcBody.style.minWidth = `${listWidth}px`;
+        }
+        listPcBtn.addEventListener("click", (function() {
+            listPcBody.classList.toggle("_active");
+        }));
+        listPcLinks.forEach((function(link) {
+            link.addEventListener("click", (function() {
+                listPcBody.classList.remove("_active");
+                listPcBtnSpan.textContent = link.textContent;
+            }));
+        }));
+        function updateSpanTextBasedOnClass() {
+            const htmlElement = document.documentElement;
+            if (htmlElement.classList.contains("fp-section-1") && secBlack) listPcBtnSpan.textContent = secBlack.textContent; else if (htmlElement.classList.contains("fp-section-2") && secGreen) listPcBtnSpan.textContent = secGreen.textContent; else if (htmlElement.classList.contains("fp-section-3") && secFruit) listPcBtnSpan.textContent = secFruit.textContent; else if (htmlElement.classList.contains("fp-section-4") && secConct) listPcBtnSpan.textContent = secConct.textContent;
+        }
+        const observer = new MutationObserver((function(mutationsList) {
+            for (const mutation of mutationsList) if (mutation.attributeName === "class") updateSpanTextBasedOnClass();
+        }));
+        observer.observe(document.documentElement, {
+            attributes: true
+        });
+        updateSpanTextBasedOnClass();
+    }));
     window["FLS"] = false;
     isWebp();
-    addTouchClass();
     addLoadedClass();
     menuInit();
 })();

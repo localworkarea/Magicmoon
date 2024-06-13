@@ -104,3 +104,92 @@ import { flsModules } from "./modules.js";
 //       }
 //   }
 // });
+
+
+document.addEventListener('DOMContentLoaded', function() {
+
+
+  // КЛОНИРУЕМ BG =====================================================
+      //   Этот код выполняет следующие шаги:
+      // Ждет полной загрузки DOM.
+      // Находит первый элемент с классом bg-main__bg.
+      // Проверяет, есть ли у этого элемента дочерний элемент.
+      // Клонирует этого ребенка.
+      // Находит все элементы с классом bg-main__bg.
+      // Вставляет клонированного ребенка во все последующие элементы с классом bg-main__bg, начиная со второго.
+      // Этот подход гарантирует, что каждый элемент получит отдельную копию дочернего элемента первого bg-main__bg.
+  const firstBgMainElement = document.querySelector('.bg-main__bg');
+  if (firstBgMainElement && firstBgMainElement.firstElementChild) {
+      const childToClone = firstBgMainElement.firstElementChild.cloneNode(true);
+      const bgMainElements = document.querySelectorAll('.bg-main__bg');
+      bgMainElements.forEach((element, index) => {
+          if (index !== 0) {
+              element.appendChild(childToClone.cloneNode(true));
+          }
+      });
+  }
+  // ===================================================================
+
+  const listPcBody = document.querySelector('.list-pc__body');
+  const listPcBtn = document.querySelector('.list-pc__btn');
+  const listPcList = document.querySelector('.list-pc__list');
+  const listPcLinks = document.querySelectorAll('.list-pc__link');
+  const listPcBtnSpan = listPcBtn.querySelector('span');
+
+  const secBlack = document.querySelector('.sec-black');
+  const secGreen = document.querySelector('.sec-green');
+  const secFruit = document.querySelector('.sec-fruit');
+  const secConct = document.querySelector('.sec-conct');
+
+  // Устанавливаем минимальную ширину для list-pc__body
+  if (listPcList) {
+      const listWidth = listPcList.offsetWidth;
+      listPcBody.style.minWidth = `${listWidth}px`;
+  }
+
+  // Добавляем обработчик события клика на кнопку
+  listPcBtn.addEventListener('click', function () {
+      listPcBody.classList.toggle('_active');
+  });
+
+  // Добавляем обработчик события клика на каждую ссылку
+  listPcLinks.forEach(function (link) {
+      link.addEventListener('click', function () {
+          listPcBody.classList.remove('_active');
+          
+          // Обновляем текстовое содержимое span внутри list-pc__btn
+          listPcBtnSpan.textContent = link.textContent;
+      });
+  });
+
+  // Функция для обновления текста span в зависимости от класса
+  function updateSpanTextBasedOnClass() {
+      const htmlElement = document.documentElement;
+
+      if (htmlElement.classList.contains('fp-section-1') && secBlack) {
+          listPcBtnSpan.textContent = secBlack.textContent;
+      } else if (htmlElement.classList.contains('fp-section-2') && secGreen) {
+          listPcBtnSpan.textContent = secGreen.textContent;
+      } else if (htmlElement.classList.contains('fp-section-3') && secFruit) {
+          listPcBtnSpan.textContent = secFruit.textContent;
+      } else if (htmlElement.classList.contains('fp-section-4') && secConct) {
+          listPcBtnSpan.textContent = secConct.textContent;
+      }
+  }
+
+  // Настройка MutationObserver для отслеживания изменений классов на теге html
+  const observer = new MutationObserver(function (mutationsList) {
+      for (const mutation of mutationsList) {
+          if (mutation.attributeName === 'class') {
+              updateSpanTextBasedOnClass();
+          }
+      }
+  });
+
+  observer.observe(document.documentElement, { attributes: true });
+
+  // Первоначальное обновление текста span на случай, если класс уже установлен
+  updateSpanTextBasedOnClass();
+
+
+});

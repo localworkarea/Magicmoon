@@ -10,12 +10,13 @@ body {
 // Оболонка секцій
 [data-fp] {
 	min-height: 100vh;
-	.touch & {
-		min-height: calc(var(--vh, 1vh) * 100);
-		@media (max-width: $mobile) {
-			transition: height 0.2s;
-		}
-	}
+	min-height: 100svh;
+	// .touch & {
+	// 	min-height: calc(var(--vh, 1vh) * 100);
+	// 	@media (max-width: $mobile) {
+	// 		transition: height 0.2s;
+	// 	}
+	// }
 	.fp-init & {
 		// Для того щоб секції не перекривали буллети
 		z-index: 1;
