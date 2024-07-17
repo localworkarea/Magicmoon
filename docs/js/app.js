@@ -4018,6 +4018,18 @@
     const da = new DynamicAdapt("max");
     da.init();
     document.addEventListener("DOMContentLoaded", (function() {
+        var winPopup = document.querySelector(".win-popup");
+        if (winPopup) {
+            setTimeout((function() {
+                winPopup.classList.add("opened");
+            }), 2500);
+            var closeButton = document.querySelector(".win-popup__close");
+            if (closeButton) closeButton.addEventListener("click", (function() {
+                winPopup.classList.remove("opened");
+            }));
+        }
+    }));
+    document.addEventListener("DOMContentLoaded", (function() {
         const firstBgMainElement = document.querySelector(".bg-main__bg");
         if (firstBgMainElement && firstBgMainElement.firstElementChild) {
             const childToClone = firstBgMainElement.firstElementChild.cloneNode(true);
